@@ -20,7 +20,7 @@ export default function GuestSection({ month }: Props) {
         <img
           src={assetUrl(guest.image)}
           alt={t(guest.name)}
-          className="w-40 h-40 rounded-full object-cover mx-auto mb-6"
+          className="w-40 h-40 rounded-full object-cover object-top mx-auto mb-6 shadow-md"
         />
         <h3 className="text-text-hover font-medium text-xl mb-1">{t(guest.name)}</h3>
         <p className="text-accent text-sm mb-4">{t(guest.role)}</p>

@@ -9,7 +9,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-divider">
       <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="text-text-hover font-semibold text-lg no-underline">
           TC
@@ -44,7 +44,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bg border-b border-white/5 px-4 pb-4">
+        <div className="md:hidden bg-bg border-b border-divider px-4 pb-4">
           <nav className="flex flex-col gap-3">
             <Link
               to="/"

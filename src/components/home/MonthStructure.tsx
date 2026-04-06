@@ -18,7 +18,7 @@ export default function MonthStructure({ month }: Props) {
         <div className="space-y-8">
           {/* Theme intro */}
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-semibold">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent font-semibold">
               1
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function MonthStructure({ month }: Props) {
           {/* Sections */}
           {month.sections.map((section, i) => (
             <div key={i} className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-semibold">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent font-semibold">
                 {i + 2}
               </div>
               <div>

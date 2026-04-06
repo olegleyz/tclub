@@ -20,14 +20,14 @@ export default function ContactSection() {
             name="name"
             placeholder={t(ui.yourName)}
             required
-            className="w-full px-4 py-3 bg-bg-card border border-white/10 rounded-lg text-text-hover placeholder:text-text/50 focus:outline-none focus:border-accent transition-colors"
+            className="w-full px-4 py-3 bg-white border border-divider rounded-lg text-text-hover placeholder:text-text/50 focus:outline-none focus:border-accent transition-colors"
           />
           <textarea
             name="message"
             placeholder={t(ui.message)}
             rows={4}
             required
-            className="w-full px-4 py-3 bg-bg-card border border-white/10 rounded-lg text-text-hover placeholder:text-text/50 focus:outline-none focus:border-accent transition-colors resize-none"
+            className="w-full px-4 py-3 bg-white border border-divider rounded-lg text-text-hover placeholder:text-text/50 focus:outline-none focus:border-accent transition-colors resize-none"
           />
           <button
             type="submit"

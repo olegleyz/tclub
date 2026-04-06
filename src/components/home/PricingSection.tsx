@@ -11,8 +11,8 @@ export default function PricingSection({ config }: Props) {
   const { pricing } = config;
 
   return (
-    <section className="py-20 px-4 bg-bg-card">
-      <div className="max-w-lg mx-auto text-center">
+    <section className="py-20 px-4">
+      <div className="max-w-lg mx-auto text-center bg-bg-card rounded-2xl p-10">
         <h2 className="text-2xl md:text-3xl font-light text-text-hover mb-8">
           {t(ui.pricing)}
         </h2>
@@ -36,7 +36,7 @@ export default function PricingSection({ config }: Props) {
           href={pricing.stripeLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block w-full px-8 py-4 bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors font-medium tracking-wide"
+          className="inline-block w-full px-8 py-4 bg-accent text-white rounded-xl hover:bg-accent-hover transition-colors font-medium tracking-wide"
         >
           {t(ui.subscribe)}
         </a>

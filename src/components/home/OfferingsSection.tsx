@@ -19,7 +19,7 @@ export default function OfferingsSection({ config }: Props) {
           {config.offerings.map((offering, i) => (
             <div
               key={i}
-              className="bg-bg-card rounded-lg p-6 text-center hover:bg-white/[0.06] transition-colors"
+              className="bg-bg-card rounded-xl p-6 text-center hover:shadow-md transition-shadow"
             >
               <h3 className="text-text-hover font-medium mb-3">{t(offering.title)}</h3>
               <p className="text-text text-sm leading-relaxed">{t(offering.description)}</p>
