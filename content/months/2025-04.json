@@ -1,0 +1,79 @@
+{
+  "id": "2025-04",
+  "year": 2025,
+  "month": 4,
+  "theme": {
+    "title": {
+      "ru": "Благосостояние",
+      "en": "Well-being & Prosperity",
+      "uk": "Добробут"
+    },
+    "description": {
+      "ru": "Исследуем благополучие как нечто большее, чем финансы — духовное, материальное, социальное благосостояние.",
+      "en": "Exploring well-being as something greater than finances — spiritual, material, and social prosperity.",
+      "uk": "Досліджуємо добробут як щось більше, ніж фінанси — духовний, матеріальний, соціальний добробут."
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ru": "Аудит реальности",
+        "en": "Reality Audit",
+        "uk": "Аудит реальності"
+      },
+      "description": {
+        "ru": "Рассматриваем убеждения о деньгах и ценности. Что мы на самом деле думаем о богатстве и благополучии?",
+        "en": "Examining our beliefs about money and value. What do we really think about wealth and well-being?",
+        "uk": "Розглядаємо переконання про гроші та цінність. Що ми насправді думаємо про багатство та добробут?"
+      }
+    },
+    {
+      "title": {
+        "ru": "Ресурсы и инструменты",
+        "en": "Resources & Tools",
+        "uk": "Ресурси та інструменти"
+      },
+      "description": {
+        "ru": "Встречи (онлайн/оффлайн), коучинг, расстановки, обсуждение книг — всё для глубокой трансформации.",
+        "en": "Meetings (online/offline), coaching, constellations, book discussions — everything for deep transformation.",
+        "uk": "Зустрічі (онлайн/офлайн), коучинг, розстановки, обговорення книг — все для глибокої трансформації."
+      }
+    },
+    {
+      "title": {
+        "ru": "От страхов к действиям",
+        "en": "From Fears to Action",
+        "uk": "Від страхів до дій"
+      },
+      "description": {
+        "ru": "Групповая поддержка: трансформация страхов в действия. Безопасное пространство для роста.",
+        "en": "Group support: transforming fears into action. A safe space for growth.",
+        "uk": "Групова підтримка: трансформація страхів у дії. Безпечний простір для зростання."
+      }
+    }
+  ],
+  "guest": {
+    "name": {
+      "ru": "Кристина Барташук",
+      "en": "Kristina Bartashuk",
+      "uk": "Крістіна Барташук"
+    },
+    "role": {
+      "ru": "Финансист",
+      "en": "Financial specialist",
+      "uk": "Фінансист"
+    },
+    "bio": {
+      "ru": "Поможет познакомиться с базовыми финансовыми инструментами, инвестиционными стратегиями и основами трейдинга.",
+      "en": "Will introduce you to basic financial instruments, investment strategies, and the fundamentals of trading.",
+      "uk": "Допоможе познайомитися з базовими фінансовими інструментами, інвестиційними стратегіями та основами трейдингу."
+    },
+    "image": "/images/guests/2025-04-kristina.jpeg"
+  },
+  "closingMessage": {
+    "ru": "Апрель может стать твоим месяцем про устойчивость, опору и рост.",
+    "en": "April can become your month of stability, grounding, and growth.",
+    "uk": "Квітень може стати твоїм місяцем про стійкість, опору та зростання."
+  },
+  "publishedAt": "2025-04-01"
+}

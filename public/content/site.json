@@ -1,0 +1,167 @@
+{
+  "about": {
+    "title": {
+      "ru": "Трансформационный Клуб",
+      "en": "Transformation Club",
+      "uk": "Трансформаційний Клуб"
+    },
+    "mission": {
+      "ru": "Наша миссия — создавать трансформационное поле для исследователей своей жизни.",
+      "en": "Our mission is to create a transformational space for those exploring their lives.",
+      "uk": "Наша місія — створювати трансформаційне поле для дослідників свого життя."
+    },
+    "description": {
+      "ru": "Трансформационный клуб — это пространство, где мы встречаемся, проживаем, исследуем и растём вместе. Следуя зову души, мы открываем новые грани себя и мира. Экологичность, безопасность, поле поддержки и круг единомышленниц. Рост и изменения — в твоих руках.",
+      "en": "The Transformation Club is a space where we meet, experience, explore and grow together. Following the call of the soul, we discover new facets of ourselves and the world. Sustainability, safety, a field of support and a circle of like-minded women. Growth and change are in your hands.",
+      "uk": "Трансформаційний клуб — це простір, де ми зустрічаємось, проживаємо, досліджуємо та зростаємо разом. Слідуючи поклику душі, ми відкриваємо нові грані себе та світу. Екологічність, безпека, поле підтримки та коло однодумиць. Зростання та зміни — у твоїх руках."
+    },
+    "tags": {
+      "ru": "Практики · эфиры · общение · тема месяца",
+      "en": "Practices · live sessions · community · monthly theme",
+      "uk": "Практики · ефіри · спілкування · тема місяця"
+    },
+    "atmosphere": {
+      "ru": "Атмосфера: дружеская и доверительная.",
+      "en": "Atmosphere: friendly and trusting.",
+      "uk": "Атмосфера: дружня та довірлива."
+    },
+    "audience": {
+      "ru": "Для тех, кто открыт новому и ищет своих на пути развития.",
+      "en": "For those who are open to new experiences and seek their people on the path of growth.",
+      "uk": "Для тих, хто відкритий новому та шукає своїх на шляху розвитку."
+    }
+  },
+  "organizers": [
+    {
+      "name": {
+        "ru": "Нана Яремич",
+        "en": "Nana Yaremich",
+        "uk": "Нана Яремич"
+      },
+      "role": {
+        "ru": "Коуч, путешественница",
+        "en": "Coach, traveler",
+        "uk": "Коуч, мандрівниця"
+      },
+      "bio": {
+        "ru": "Сертифицированный коуч в юнгианском и интегральном подходе. Профессиональная путешественница.",
+        "en": "Certified coach in Jungian and integral approaches. Professional traveler.",
+        "uk": "Сертифікований коуч у юнгіанському та інтегральному підході. Професійна мандрівниця."
+      },
+      "image": "/images/organizers/nana.jpeg"
+    },
+    {
+      "name": {
+        "ru": "Ксения Лейзерова",
+        "en": "Ksenia Leizerova",
+        "uk": "Ксенія Лейзерова"
+      },
+      "role": {
+        "ru": "Нумеролог, расстановщик",
+        "en": "Numerologist, constellation facilitator",
+        "uk": "Нумеролог, розстановщик"
+      },
+      "bio": {
+        "ru": "Изучает шаманизм и психологию (Capilano University).",
+        "en": "Studies shamanism and psychology (Capilano University).",
+        "uk": "Вивчає шаманізм та психологію (Capilano University)."
+      },
+      "image": "/images/organizers/ksenia.jpeg"
+    }
+  ],
+  "offerings": [
+    {
+      "title": {
+        "ru": "Коучинговые практики",
+        "en": "Coaching practices",
+        "uk": "Коучингові практики"
+      },
+      "description": {
+        "ru": "Групповые и индивидуальные сессии для раскрытия потенциала",
+        "en": "Group and individual sessions to unlock your potential",
+        "uk": "Групові та індивідуальні сесії для розкриття потенціалу"
+      }
+    },
+    {
+      "title": {
+        "ru": "Расстановочные практики",
+        "en": "Systemic constellation work",
+        "uk": "Розстановочні практики"
+      },
+      "description": {
+        "ru": "Исследование семейных и системных динамик",
+        "en": "Exploring family and systemic dynamics",
+        "uk": "Дослідження сімейних та системних динамік"
+      }
+    },
+    {
+      "title": {
+        "ru": "Чтение и обсуждение книги",
+        "en": "Book reading and discussion",
+        "uk": "Читання та обговорення книги"
+      },
+      "description": {
+        "ru": "Совместное чтение и глубокое обсуждение трансформационной литературы",
+        "en": "Shared reading and deep discussion of transformational literature",
+        "uk": "Спільне читання та глибоке обговорення трансформаційної літератури"
+      }
+    }
+  ],
+  "pricing": {
+    "amount": "40",
+    "currency": "CAD",
+    "trial": {
+      "ru": "Первые 3 дня бесплатно",
+      "en": "First 3 days free",
+      "uk": "Перші 3 дні безкоштовно"
+    },
+    "benefits": [
+      {
+        "ru": "Тема месяца",
+        "en": "Monthly theme",
+        "uk": "Тема місяця"
+      },
+      {
+        "ru": "Книга",
+        "en": "Book",
+        "uk": "Книга"
+      },
+      {
+        "ru": "Онлайн и оффлайн встречи",
+        "en": "Online and offline meetings",
+        "uk": "Онлайн та офлайн зустрічі"
+      },
+      {
+        "ru": "Коучинговые и расстановочные практики",
+        "en": "Coaching and constellation practices",
+        "uk": "Коучингові та розстановочні практики"
+      },
+      {
+        "ru": "Telegram-чат",
+        "en": "Telegram chat",
+        "uk": "Telegram-чат"
+      },
+      {
+        "ru": "Сессия с гостем месяца",
+        "en": "Session with the guest of the month",
+        "uk": "Сесія з гостем місяця"
+      },
+      {
+        "ru": "Дополнительные проекты",
+        "en": "Additional projects",
+        "uk": "Додаткові проєкти"
+      },
+      {
+        "ru": "Записи всех встреч",
+        "en": "Recordings of all meetings",
+        "uk": "Записи всіх зустрічей"
+      }
+    ],
+    "stripeLink": "https://buy.stripe.com/4gMaEW6ll8v7dG6be77g408",
+    "postPayment": {
+      "ru": "После оплаты вы получите ссылку на Telegram-чат клуба",
+      "en": "After payment you will receive a link to the club's Telegram chat",
+      "uk": "Після оплати ви отримаєте посилання на Telegram-чат клубу"
+    }
+  },
+}

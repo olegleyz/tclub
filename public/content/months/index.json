@@ -1,0 +1,18 @@
+{
+  "current": "2025-04",
+  "months": [
+    {
+      "id": "2025-04",
+      "theme": {
+        "ru": "Благосостояние",
+        "en": "Well-being & Prosperity",
+        "uk": "Добробут"
+      },
+      "guestName": {
+        "ru": "Кристина Барташук",
+        "en": "Kristina Bartashuk",
+        "uk": "Крістіна Барташук"
+      }
+    }
+  ]
+}

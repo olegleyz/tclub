@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'CameraPlain';
+  src: url('/fonts/CameraPlainVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg: #1b1b1b;
+  --color-bg-card: rgba(255, 255, 255, 0.04);
+  --color-text: #c5c1b9;
+  --color-text-hover: #dcdad5;
+  --color-accent: #575ECF;
+  --color-accent-hover: #6a70e0;
+  --font-sans: 'CameraPlain', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
