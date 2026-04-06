@@ -5,6 +5,10 @@ on:
     types: [labeled, opened]
   issue_comment:
     types: [created]
+  pull_request_review:
+    types: [submitted]
+  pull_request_review_comment:
+    types: [created]
 
 permissions:
   contents: write
@@ -13,6 +17,7 @@ permissions:
   id-token: write
 
 jobs:
+  # Handle issues: implement and create PR
   implement:
     if: >
       (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'claude-code')) ||
@@ -32,16 +37,13 @@ jobs:
           label_trigger: "claude-code"
           prompt: |
             After implementing changes, make sure the code compiles and
-            passes type checks. Run the project's build and typecheck
-            commands (e.g. `npm run build`, `npm run typecheck`, or
-            `npx tsc --noEmit`) and fix any errors before committing.
+            passes type checks. Run `npm run build` and `npx tsc --noEmit`
+            and fix any errors before committing.
 
-      # Detect the branch Claude pushed to and run validations
       - name: Detect Claude branch
         id: detect-branch
         run: |
           git fetch --all --prune
-          # Get the most recent claude/* branch by commit date
           CLAUDE_BRANCH=$(git branch -r --sort=-committerdate \
             | grep 'origin/claude/' \
             | head -1 \
@@ -67,20 +69,12 @@ jobs:
         if: steps.detect-branch.outputs.branch_found == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Validate build
         if: steps.detect-branch.outputs.branch_found == 'true'
-        run: npm ci
-
-      - name: Run build
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        run: npm run build
-
-      - name: Run typecheck
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        run: npm run typecheck 2>/dev/null || npx tsc --noEmit 2>/dev/null || echo "No typecheck script found"
+        run: npm ci && npm run build && npx tsc --noEmit
 
       - name: Create pull request
         if: steps.detect-branch.outputs.branch_found == 'true'
@@ -90,7 +84,6 @@ jobs:
           ISSUE_NUMBER=${{ github.event.issue.number }}
           ISSUE_TITLE="${{ github.event.issue.title }}"
 
-          # Check if a PR already exists for this branch
           EXISTING_PR=$(gh pr list \
             --head "${{ steps.detect-branch.outputs.branch }}" \
             --json number --jq '.[0].number' 2>/dev/null || echo "")
@@ -100,19 +93,65 @@ jobs:
             exit 0
           fi
 
-          PR_BODY="## Summary
+          gh pr create \
+            --title "Fix #${ISSUE_NUMBER}: ${ISSUE_TITLE}" \
+            --body "$(cat <<'BODY'
+          ## Summary
 
           Automated implementation for #${ISSUE_NUMBER}.
 
           Closes #${ISSUE_NUMBER}
 
           ---
-          *Automated by Claude Code*"
-
-          gh pr create \
-            --title "Fix #${ISSUE_NUMBER}: ${ISSUE_TITLE}" \
-            --body "$PR_BODY" \
+          *Automated by Claude Code*
+          BODY
+          )" \
             --base main \
             --head "${{ steps.detect-branch.outputs.branch }}"
 
           echo "PR created successfully."
+
+  # Handle PR review comments: Claude addresses CodeRabbit feedback
+  address-review:
+    if: >
+      (github.event_name == 'pull_request_review_comment' &&
+       github.event.comment.user.login != 'github-actions[bot]') ||
+      (github.event_name == 'pull_request_review' &&
+       github.event.review.state == 'changes_requested')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          trigger_phrase: "@claude"
+          prompt: |
+            You are addressing PR review comments (likely from CodeRabbit).
+            Read the review comments carefully, implement the requested changes,
+            and make sure the code compiles by running `npm run build` and
+            `npx tsc --noEmit`. Fix any errors before committing.
+
+  # Auto-merge when CodeRabbit approves
+  auto-merge:
+    if: >
+      github.event_name == 'pull_request_review' &&
+      github.event.review.state == 'approved' &&
+      github.event.review.user.login == 'coderabbitai[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          echo "CodeRabbit approved PR #${PR_NUMBER}, merging..."
+          gh pr merge $PR_NUMBER \
+            --repo ${{ github.repository }} \
+            --squash \
+            --delete-branch
+          echo "PR #${PR_NUMBER} merged successfully."
