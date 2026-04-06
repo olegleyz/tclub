@@ -1,11 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import {
-  requestDeviceCode,
-  pollForToken,
-  getAuthenticatedUser,
-  checkRepoAccess,
-  type DeviceCodeResponse,
-} from '../lib/github';
+import { getAuthenticatedUser, checkRepoAccess } from '../lib/github';
 
 const TOKEN_KEY = 'tclub-gh-token';
 const USER_KEY = 'tclub-gh-user';
@@ -15,9 +9,8 @@ interface AuthState {
   username: string | null;
   avatarUrl: string | null;
   loading: boolean;
-  deviceCode: DeviceCodeResponse | null;
   error: string | null;
-  startLogin: () => Promise<void>;
+  login: (pat: string) => Promise<boolean>;
   logout: () => void;
 }
 
@@ -32,14 +25,12 @@ export function useAuth(): AuthState {
     return stored ? JSON.parse(stored).avatar_url : null;
   });
   const [loading, setLoading] = useState(false);
-  const [deviceCode, setDeviceCode] = useState<DeviceCodeResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // Validate stored token on mount
   useEffect(() => {
     if (!token) return;
     getAuthenticatedUser(token).catch(() => {
-      // Token expired or revoked
       localStorage.removeItem(TOKEN_KEY);
       localStorage.removeItem(USER_KEY);
       setToken(null);
@@ -48,37 +39,28 @@ export function useAuth(): AuthState {
     });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const startLogin = useCallback(async () => {
+  const login = useCallback(async (pat: string): Promise<boolean> => {
     setError(null);
     setLoading(true);
     try {
-      // Step 1: Get device code
-      const dc = await requestDeviceCode();
-      setDeviceCode(dc);
-
-      // Step 2: Poll for token (user enters code on github.com)
-      const accessToken = await pollForToken(dc.device_code, dc.interval);
-
-      // Step 3: Verify user has repo access
-      const user = await getAuthenticatedUser(accessToken);
-      const hasAccess = await checkRepoAccess(accessToken);
+      const user = await getAuthenticatedUser(pat);
+      const hasAccess = await checkRepoAccess(pat);
 
       if (!hasAccess) {
-        setError('You do not have write access to this repository.');
-        setDeviceCode(null);
+        setError('No write access to this repository. Make sure you are a collaborator.');
         setLoading(false);
-        return;
+        return false;
       }
 
-      // Save
-      localStorage.setItem(TOKEN_KEY, accessToken);
+      localStorage.setItem(TOKEN_KEY, pat);
       localStorage.setItem(USER_KEY, JSON.stringify(user));
-      setToken(accessToken);
+      setToken(pat);
       setUsername(user.login);
       setAvatarUrl(user.avatar_url);
-      setDeviceCode(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+      return true;
+    } catch {
+      setError('Invalid token. Please check and try again.');
+      return false;
     } finally {
       setLoading(false);
     }
@@ -90,8 +72,7 @@ export function useAuth(): AuthState {
     setToken(null);
     setUsername(null);
     setAvatarUrl(null);
-    setDeviceCode(null);
   }, []);
 
-  return { token, username, avatarUrl, loading, deviceCode, error, startLogin, logout };
+  return { token, username, avatarUrl, loading, error, login, logout };
 }

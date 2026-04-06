@@ -1,5 +1,6 @@
 import { useLang } from '../../hooks/useLang';
 import { ui } from '../../lib/ui-strings';
+import { assetUrl } from '../../lib/assets';
 import type { SiteConfig } from '../../types/month';
 
 interface Props {
@@ -19,7 +20,7 @@ export default function OrganizersSection({ config }: Props) {
           {config.organizers.map((org, i) => (
             <div key={i} className="text-center">
               <img
-                src={org.image}
+                src={assetUrl(org.image)}
                 alt={t(org.name)}
                 className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
               />

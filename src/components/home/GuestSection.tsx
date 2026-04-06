@@ -1,5 +1,6 @@
 import { useLang } from '../../hooks/useLang';
 import { ui } from '../../lib/ui-strings';
+import { assetUrl } from '../../lib/assets';
 import type { Month } from '../../types/month';
 
 interface Props {
@@ -17,7 +18,7 @@ export default function GuestSection({ month }: Props) {
           {t(ui.guestOfMonth)}
         </h2>
         <img
-          src={guest.image}
+          src={assetUrl(guest.image)}
           alt={t(guest.name)}
           className="w-40 h-40 rounded-full object-cover mx-auto mb-6"
         />

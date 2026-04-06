@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useMonth } from '../hooks/useContent';
 import { useLang } from '../hooks/useLang';
 import { ui, monthNames } from '../lib/ui-strings';
+import { assetUrl } from '../lib/assets';
 
 export default function MonthDetailPage() {
   const { monthId } = useParams<{ monthId: string }>();
@@ -50,7 +51,7 @@ export default function MonthDetailPage() {
         <div className="bg-bg-card rounded-lg p-8 text-center">
           <h2 className="text-xl text-text-hover mb-6">{t(ui.guestOfMonth)}</h2>
           <img
-            src={month.guest.image}
+            src={assetUrl(month.guest.image)}
             alt={t(month.guest.name)}
             className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
           />

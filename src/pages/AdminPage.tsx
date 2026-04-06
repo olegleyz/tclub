@@ -12,7 +12,7 @@ type View = 'list' | 'add' | 'edit' | 'bug' | 'enhancement';
 
 export default function AdminPage() {
   const { t } = useLang();
-  const { token, username, avatarUrl, loading, deviceCode, error, startLogin, logout } = useAuth();
+  const { token, username, avatarUrl, loading, error, login, logout } = useAuth();
   const [view, setView] = useState<View>('list');
   const [editMonthId, setEditMonthId] = useState<string | undefined>();
   const editMonth = useMonth(editMonthId);
@@ -20,9 +20,8 @@ export default function AdminPage() {
   if (!token) {
     return (
       <LoginButton
-        onLogin={startLogin}
+        onLogin={login}
         loading={loading}
-        deviceCode={deviceCode}
         error={error}
       />
     );

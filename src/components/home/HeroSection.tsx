@@ -17,7 +17,7 @@ export default function HeroSection({ config, month }: Props) {
     <section
       className="relative min-h-screen flex items-center justify-center text-center px-4"
       style={{
-        backgroundImage: 'url(/images/backgrounds/hero-bg.jpg)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/backgrounds/hero-bg.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
