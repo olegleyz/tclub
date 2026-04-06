@@ -1,4 +1,4 @@
-import { useMonthIndex, useMonth } from '../../hooks/useContent';
+import { useMonthIndex } from '../../hooks/useContent';
 import { useLang } from '../../hooks/useLang';
 import { adminUi } from '../../lib/admin-strings';
 import { monthNames } from '../../lib/ui-strings';

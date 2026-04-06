@@ -20,7 +20,7 @@ export default function IssueForm({ token, type }: Props) {
     e.preventDefault();
     setStatus('saving');
     try {
-      const labels = [type];
+      const labels: string[] = [type];
       if (autoImplement) labels.push('claude-code');
       const url = await createIssue(token, title, body, labels);
       setIssueUrl(url);

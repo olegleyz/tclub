@@ -31,7 +31,7 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
   const [guestRole, setGuestRole] = useState<LocalizedString>(existing?.guest.role ?? emptyLocalized());
   const [guestBio, setGuestBio] = useState<LocalizedString>(existing?.guest.bio ?? emptyLocalized());
   const [guestImageFile, setGuestImageFile] = useState<File | null>(null);
-  const [guestImagePath, setGuestImagePath] = useState(existing?.guest.image ?? '');
+  const [guestImagePath] = useState(existing?.guest.image ?? '');
   const [closingMessage, setClosingMessage] = useState<LocalizedString>(existing?.closingMessage ?? emptyLocalized());
   const [setAsCurrent, setSetAsCurrent] = useState(!existing);
   const [status, setStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
@@ -146,7 +146,6 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
 
       const pubIndexFile = await getFile(token, 'public/content/months/index.json');
       if (pubIndexFile && indexFile) {
-        const index: MonthIndex = JSON.parse(indexFile.content);
         // Re-read since we just updated it
         const updatedIndex = await getFile(token, 'content/months/index.json');
         if (updatedIndex) {
