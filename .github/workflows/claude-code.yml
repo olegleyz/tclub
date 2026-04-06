@@ -2,7 +2,9 @@ name: Claude Code Automation
 
 on:
   issues:
-    types: [labeled]
+    types: [labeled, opened]
+  issue_comment:
+    types: [created]
 
 permissions:
   contents: write
@@ -12,7 +14,9 @@ permissions:
 
 jobs:
   implement:
-    if: github.event.label.name == 'claude-code'
+    if: >
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'claude-code')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'claude-code'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,4 +26,5 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_number: ${{ github.event.issue.number }}
+          trigger_phrase: "@claude"
+          label_trigger: "claude-code"
