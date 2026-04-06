@@ -2,7 +2,7 @@ name: Claude Code Automation
 
 on:
   issues:
-    types: [labeled, opened]
+    types: [labeled]
   issue_comment:
     types: [created]
   pull_request_review:
@@ -20,9 +20,12 @@ jobs:
   # Handle issues: implement and create PR
   implement:
     if: >
-      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'claude-code')) ||
+      (github.event_name == 'issues' && github.event.label.name == 'claude-code') ||
       (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'claude-code'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: claude-issue-${{ github.event.issue.number }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +42,7 @@ jobs:
             After implementing changes, make sure the code compiles and
             passes type checks. Run `npm run build` and `npx tsc --noEmit`
             and fix any errors before committing.
+            Always create a new branch and push your changes.
 
       - name: Detect Claude branch
         id: detect-branch
@@ -95,7 +99,7 @@ jobs:
 
           gh pr create \
             --title "Fix #${ISSUE_NUMBER}: ${ISSUE_TITLE}" \
-            --body "$(cat <<'BODY'
+            --body "$(cat <<EOF
           ## Summary
 
           Automated implementation for #${ISSUE_NUMBER}.
@@ -104,7 +108,7 @@ jobs:
 
           ---
           *Automated by Claude Code*
-          BODY
+          EOF
           )" \
             --base main \
             --head "${{ steps.detect-branch.outputs.branch }}"
@@ -119,6 +123,9 @@ jobs:
       (github.event_name == 'pull_request_review' &&
        github.event.review.state == 'changes_requested')
     runs-on: ubuntu-latest
+    concurrency:
+      group: claude-pr-${{ github.event.pull_request.number }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -133,8 +140,8 @@ jobs:
           prompt: |
             You are addressing PR review comments (likely from CodeRabbit).
             Read the review comments carefully, implement the requested changes,
-            and make sure the code compiles by running `npm run build` and
-            `npx tsc --noEmit`. Fix any errors before committing.
+            run `npm run build` and `npx tsc --noEmit` to verify, and fix
+            any errors before committing.
 
   # Auto-merge when CodeRabbit approves
   auto-merge:
@@ -144,7 +151,7 @@ jobs:
       github.event.review.user.login == 'coderabbitai[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Enable auto-merge
+      - name: Merge PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
