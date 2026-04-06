@@ -17,139 +17,36 @@ permissions:
   id-token: write
 
 jobs:
-  # Handle issues: implement and create PR
-  implement:
+  claude:
     if: >
       (github.event_name == 'issues' && github.event.label.name == 'claude-code') ||
-      (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'claude-code'))
+      (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'claude-code')) ||
+      (github.event_name == 'pull_request_review_comment') ||
+      (github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested')
     runs-on: ubuntu-latest
     concurrency:
-      group: claude-issue-${{ github.event.issue.number }}
+      group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - uses: anthropics/claude-code-action@v1
-        id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           trigger_phrase: "@claude"
           label_trigger: "claude-code"
-          show_full_output: "true"
-          additional_permissions: "WebFetch,WebSearch"
+          additional_permissions: "Bash(npm run build:*),Bash(npx tsc:*),Bash(npm ci:*),Bash(npm install:*)"
           prompt: |
-            You MUST implement the changes described in the GitHub issue.
-            The issue title and body are provided in the context above.
-            Do NOT just acknowledge or save notes — actually write code.
-            Steps:
-            1. Read the issue description from the context provided above
-            2. Implement the requested changes by creating/editing files
-            3. Run `npm run build` and `npx tsc --noEmit` to verify
-            4. Fix any build or type errors
-            5. Commit and push to a new branch
-            Do NOT save memory files. Do NOT ask what to work on. Just implement the issue.
-
-      - name: Detect Claude branch
-        id: detect-branch
-        run: |
-          git fetch --all --prune
-          CLAUDE_BRANCH=$(git branch -r --sort=-committerdate \
-            | grep 'origin/claude/' \
-            | head -1 \
-            | sed 's|origin/||' \
-            | xargs)
-          if [ -z "$CLAUDE_BRANCH" ]; then
-            echo "No Claude branch found, skipping PR creation."
-            echo "branch_found=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "Found branch: $CLAUDE_BRANCH"
-            echo "branch=$CLAUDE_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "branch_found=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Checkout Claude branch
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.detect-branch.outputs.branch }}
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Validate build
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        run: npm ci && npm run build && npx tsc --noEmit
-
-      - name: Create pull request
-        if: steps.detect-branch.outputs.branch_found == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ISSUE_NUMBER=${{ github.event.issue.number }}
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-
-          EXISTING_PR=$(gh pr list \
-            --head "${{ steps.detect-branch.outputs.branch }}" \
-            --json number --jq '.[0].number' 2>/dev/null || echo "")
-
-          if [ -n "$EXISTING_PR" ]; then
-            echo "PR #$EXISTING_PR already exists for this branch."
-            exit 0
-          fi
-
-          gh pr create \
-            --title "Fix #${ISSUE_NUMBER}: ${ISSUE_TITLE}" \
-            --body "$(cat <<EOF
-          ## Summary
-
-          Automated implementation for #${ISSUE_NUMBER}.
-
-          Closes #${ISSUE_NUMBER}
-
-          ---
-          *Automated by Claude Code*
-          EOF
-          )" \
-            --base main \
-            --head "${{ steps.detect-branch.outputs.branch }}"
-
-          echo "PR created successfully."
-
-  # Handle PR review comments: Claude addresses CodeRabbit feedback
-  address-review:
-    if: >
-      (github.event_name == 'pull_request_review_comment' &&
-       github.event.comment.user.login != 'github-actions[bot]') ||
-      (github.event_name == 'pull_request_review' &&
-       github.event.review.state == 'changes_requested')
-    runs-on: ubuntu-latest
-    concurrency:
-      group: claude-pr-${{ github.event.pull_request.number }}
-      cancel-in-progress: false
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-
-      - uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          trigger_phrase: "@claude"
-          prompt: |
-            You are addressing PR review comments (likely from CodeRabbit).
-            Read the review comments carefully, implement the requested changes,
-            run `npm run build` and `npx tsc --noEmit` to verify, and fix
-            any errors before committing.
+            You are an automated developer for the TClub website (React + Vite + TypeScript + Tailwind CSS).
+            When triggered on an issue, implement the requested changes:
+            1. Create or edit the necessary files
+            2. Run `npm ci && npm run build` to verify the build passes
+            3. Commit and push your changes to a new branch
+            4. The workflow will handle PR creation
+            When triggered on a PR review, address the review comments and push fixes.
 
   # Auto-merge when CodeRabbit approves
   auto-merge:
