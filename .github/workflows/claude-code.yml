@@ -40,10 +40,15 @@ jobs:
           label_trigger: "claude-code"
           show_full_output: "true"
           prompt: |
-            After implementing changes, make sure the code compiles and
-            passes type checks. Run `npm run build` and `npx tsc --noEmit`
-            and fix any errors before committing.
-            Always create a new branch and push your changes.
+            You MUST implement the changes described in the GitHub issue.
+            Do NOT just acknowledge or save notes — actually write code.
+            Steps:
+            1. Read the issue description carefully
+            2. Implement the requested changes by creating/editing files
+            3. Run `npm run build` and `npx tsc --noEmit` to verify
+            4. Fix any build or type errors
+            5. Commit and push to a new branch
+            Do NOT save memory files. Do NOT ask what to work on. Just implement the issue.
 
       - name: Detect Claude branch
         id: detect-branch
