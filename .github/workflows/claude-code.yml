@@ -38,6 +38,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           trigger_phrase: "@claude"
           label_trigger: "claude-code"
+          show_full_output: "true"
           prompt: |
             After implementing changes, make sure the code compiles and
             passes type checks. Run `npm run build` and `npx tsc --noEmit`
