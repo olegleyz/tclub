@@ -24,7 +24,7 @@ export default function HeroSection({ config, month }: Props) {
     >
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 max-w-2xl">
-        <h1 className="text-4xl md:text-6xl font-light text-white mb-4 tracking-tight">
+        <h1 className="text-4xl md:text-6xl font-light mb-4 tracking-tight" style={{ color: '#D4AF37' }}>
           {t(config.about.title)}
         </h1>
         <p className="text-lg md:text-xl text-white/80 mb-8">
