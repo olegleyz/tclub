@@ -1,7 +1,7 @@
 const GITHUB_API = 'https://api.github.com';
 
-const OWNER = import.meta.env.VITE_GITHUB_OWNER || '';
-const REPO = import.meta.env.VITE_GITHUB_REPO || '';
+const OWNER = 'olegleyz';
+const REPO = 'tclub';
 
 function authHeaders(token: string) {
   return {
