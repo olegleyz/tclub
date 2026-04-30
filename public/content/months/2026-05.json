@@ -130,6 +130,24 @@
         "uk": "Поговоримо про те, як почуття та переживання відображаються в тілі, і Анастасія проведе практику «Примирення мозку з тілом»."
       },
       "image": "/images/guests/2026-05-anastasia.jpeg"
+    },
+    {
+      "name": {
+        "ru": "Натали",
+        "en": "Natalie",
+        "uk": "Наталі"
+      },
+      "role": {
+        "ru": "Бальная танцовщица, создатель TriFlow",
+        "en": "Ballroom dancer, creator of TriFlow",
+        "uk": "Бальна танцівниця, авторка TriFlow"
+      },
+      "bio": {
+        "ru": "Профессиональная бальная танцовщица с опытом более 17 лет. Создатель авторской бережной программы TriFlow, которая объединяет танец, стретчинг, медитации и дыхательные практики (пранаяму).",
+        "en": "Professional ballroom dancer with over 17 years of experience. Creator of TriFlow — a gentle authored program that combines dance, stretching, meditation, and breathing practices (pranayama).",
+        "uk": "Професійна бальна танцівниця з досвідом понад 17 років. Авторка дбайливої програми TriFlow, що поєднує танець, стретчинг, медитації та дихальні практики (пранаяму)."
+      },
+      "image": "/images/guests/2026-05-natalie.jpeg"
     }
   ],
   "closingMessage": {
