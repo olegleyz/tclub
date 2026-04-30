@@ -62,18 +62,30 @@ export default function MonthDetailPage() {
           </div>
         )}
 
-        {/* Guest */}
-        <div className="bg-bg-card rounded-lg p-8 text-center">
-          <h2 className="text-xl text-text-hover mb-6">{t(ui.guestOfMonth)}</h2>
-          <img
-            src={assetUrl(month.guest.image)}
-            alt={t(month.guest.name)}
-            className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
-          />
-          <h3 className="text-text-hover font-medium text-lg mb-1">{t(month.guest.name)}</h3>
-          <p className="text-accent text-sm mb-3">{t(month.guest.role)}</p>
-          <p className="text-text text-sm leading-relaxed max-w-md mx-auto">{t(month.guest.bio)}</p>
-        </div>
+        {/* Guests */}
+        {month.guests && month.guests.length > 0 && (
+          <div className="bg-bg-card rounded-lg p-8">
+            <h2 className="text-xl text-text-hover mb-6 text-center">
+              {month.guests.length === 1 ? t(ui.guestOfMonth) : t(ui.guestsOfMonth)}
+            </h2>
+            <div className={month.guests.length === 1 ? 'text-center' : 'grid sm:grid-cols-2 gap-8'}>
+              {month.guests.map((g, i) => (
+                <div key={i} className={month.guests.length === 1 ? '' : 'flex flex-col items-center text-center'}>
+                  <img
+                    src={assetUrl(g.image)}
+                    alt={t(g.name)}
+                    className={`${month.guests.length === 1 ? 'w-32 h-32 mx-auto' : 'w-28 h-28'} rounded-full object-cover mb-4`}
+                  />
+                  <h3 className="text-text-hover font-medium text-lg mb-1">{t(g.name)}</h3>
+                  <p className="text-accent text-sm mb-3">{t(g.role)}</p>
+                  {g.bio && (
+                    <p className="text-text text-sm leading-relaxed max-w-md mx-auto">{t(g.bio)}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {month.closingMessage && (
           <p className="text-text-hover text-center italic mt-12">{t(month.closingMessage)}</p>

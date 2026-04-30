@@ -94,24 +94,39 @@
       "uk": "Записи всіх зустрічей"
     }
   ],
-  "guest": {
-    "name": {
-      "ru": "Гость месяца — уточняется",
-      "en": "Guest of the month — TBD",
-      "uk": "Гість місяця — уточнюється"
+  "guests": [
+    {
+      "name": {
+        "ru": "Юлия Лобашкова",
+        "en": "Yulia Lobashkova",
+        "uk": "Юлія Лобашкова"
+      },
+      "role": {
+        "ru": "Врач-гинеколог",
+        "en": "Gynecologist",
+        "uk": "Лікар-гінеколог"
+      },
+      "bio": {
+        "ru": "Поговорим о женском здоровье и связи с телом — то, о чём редко спрашивают на приёме, но что важно знать.",
+        "en": "We will talk about women's health and the connection to the body — things rarely asked at the doctor's office but important to know.",
+        "uk": "Поговоримо про жіноче здоров'я та зв'язок з тілом — те, про що рідко питають на прийомі, але що важливо знати."
+      },
+      "image": "/images/guests/2026-05-yulia.jpeg"
     },
-    "role": {
-      "ru": "Врач-гинеколог",
-      "en": "Gynecologist",
-      "uk": "Лікар-гінеколог"
-    },
-    "bio": {
-      "ru": "Поговорим о женском здоровье и связи с телом — то, о чём редко спрашивают на приёме, но что важно знать.",
-      "en": "We will talk about women's health and the connection to the body — things rarely asked at the doctor's office but important to know.",
-      "uk": "Поговоримо про жіноче здоров'я та зв'язок з тілом — те, про що рідко питають на прийомі, але що важливо знати."
-    },
-    "image": "/images/guests/2026-05-pending.svg"
-  },
+    {
+      "name": {
+        "ru": "Анастасия Биленко",
+        "en": "Anastasia Bilenko",
+        "uk": "Анастасія Біленко"
+      },
+      "role": {
+        "ru": "Психолог, психосоматолог",
+        "en": "Psychologist, psychosomatologist",
+        "uk": "Психолог, психосоматолог"
+      },
+      "image": "/images/guests/2026-05-anastasia.jpeg"
+    }
+  ],
   "closingMessage": {
     "ru": "Май может стать твоим месяцем встречи с телом — через слух, бережность и контакт.",
     "en": "May can become your month of meeting your body — through listening, care, and contact.",

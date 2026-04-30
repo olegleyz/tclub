@@ -14,7 +14,7 @@ export interface MonthSection {
 export interface Guest {
   name: LocalizedString;
   role: LocalizedString;
-  bio: LocalizedString;
+  bio?: LocalizedString;
   image: string;
 }
 
@@ -30,7 +30,7 @@ export interface Month {
   theme: MonthTheme;
   sections: MonthSection[];
   schedule?: LocalizedString[];
-  guest: Guest;
+  guests: Guest[];
   closingMessage: LocalizedString;
   publishedAt: string;
 }

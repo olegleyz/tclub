@@ -10,6 +10,7 @@ export const ui: Record<string, LocalizedString> = {
   monthSchedule: { ru: 'Расписание месяца', en: 'Monthly schedule', uk: 'Розклад місяця' },
   organizers: { ru: 'Организаторы', en: 'Organizers', uk: 'Організатори' },
   guestOfMonth: { ru: 'Гость месяца', en: 'Guest of the month', uk: 'Гість місяця' },
+  guestsOfMonth: { ru: 'Гости месяца', en: 'Guests of the month', uk: 'Гості місяця' },
   whatsInside: { ru: 'Что внутри месяца', en: "What's inside", uk: 'Що всередині місяця' },
   pricing: { ru: 'Подписка', en: 'Subscription', uk: 'Підписка' },
   contactUs: { ru: 'Связь с нами', en: 'Contact us', uk: "Зв'язок з нами" },

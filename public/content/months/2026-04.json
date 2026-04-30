@@ -52,24 +52,26 @@
       }
     }
   ],
-  "guest": {
-    "name": {
-      "ru": "Кристина Барташук",
-      "en": "Kristina Bartashuk",
-      "uk": "Крістіна Барташук"
-    },
-    "role": {
-      "ru": "Финансист",
-      "en": "Financial specialist",
-      "uk": "Фінансист"
-    },
-    "bio": {
-      "ru": "Поможет познакомиться с базовыми финансовыми инструментами, инвестиционными стратегиями и основами трейдинга.",
-      "en": "Will introduce you to basic financial instruments, investment strategies, and the fundamentals of trading.",
-      "uk": "Допоможе познайомитися з базовими фінансовими інструментами, інвестиційними стратегіями та основами трейдингу."
-    },
-    "image": "/images/guests/2026-04-kristina.jpeg"
-  },
+  "guests": [
+    {
+      "name": {
+        "ru": "Кристина Барташук",
+        "en": "Kristina Bartashuk",
+        "uk": "Крістіна Барташук"
+      },
+      "role": {
+        "ru": "Финансист",
+        "en": "Financial specialist",
+        "uk": "Фінансист"
+      },
+      "bio": {
+        "ru": "Поможет познакомиться с базовыми финансовыми инструментами, инвестиционными стратегиями и основами трейдинга.",
+        "en": "Will introduce you to basic financial instruments, investment strategies, and the fundamentals of trading.",
+        "uk": "Допоможе познайомитися з базовими фінансовими інструментами, інвестиційними стратегіями та основами трейдингу."
+      },
+      "image": "/images/guests/2026-04-kristina.jpeg"
+    }
+  ],
   "closingMessage": {
     "ru": "Апрель может стать твоим месяцем про устойчивость, опору и рост.",
     "en": "April can become your month of stability, grounding, and growth.",
