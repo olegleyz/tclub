@@ -7,6 +7,7 @@ export const ui: Record<string, LocalizedString> = {
   monthTheme: { ru: 'Тема месяца', en: 'Monthly theme', uk: 'Тема місяця' },
   aboutClub: { ru: 'О клубе', en: 'About the club', uk: 'Про клуб' },
   monthStructure: { ru: 'Структура месяца', en: 'Monthly structure', uk: 'Структура місяця' },
+  monthSchedule: { ru: 'Расписание месяца', en: 'Monthly schedule', uk: 'Розклад місяця' },
   organizers: { ru: 'Организаторы', en: 'Organizers', uk: 'Організатори' },
   guestOfMonth: { ru: 'Гость месяца', en: 'Guest of the month', uk: 'Гість місяця' },
   whatsInside: { ru: 'Что внутри месяца', en: "What's inside", uk: 'Що всередині місяця' },

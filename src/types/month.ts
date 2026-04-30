@@ -29,6 +29,7 @@ export interface Month {
   month: number;
   theme: MonthTheme;
   sections: MonthSection[];
+  schedule?: LocalizedString[];
   guest: Guest;
   closingMessage: LocalizedString;
   publishedAt: string;

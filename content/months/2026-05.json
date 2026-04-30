@@ -52,6 +52,48 @@
       }
     }
   ],
+  "schedule": [
+    {
+      "ru": "Фокус-настройка на теме месяца",
+      "en": "Focus and tuning into the month's theme",
+      "uk": "Фокус та налаштування на тему місяця"
+    },
+    {
+      "ru": "Книга месяца",
+      "en": "Book of the month",
+      "uk": "Книга місяця"
+    },
+    {
+      "ru": "Онлайн и офлайн встречи",
+      "en": "Online and offline meetings",
+      "uk": "Онлайн та офлайн зустрічі"
+    },
+    {
+      "ru": "Коучинговые и расстановочные практики",
+      "en": "Coaching and constellation practices",
+      "uk": "Коучингові та розстановочні практики"
+    },
+    {
+      "ru": "Telegram-чат",
+      "en": "Telegram chat",
+      "uk": "Telegram-чат"
+    },
+    {
+      "ru": "Онлайн-встреча с врачом-гинекологом — о женском здоровье",
+      "en": "Online session with a gynecologist — on women's health",
+      "uk": "Онлайн-зустріч з лікарем-гінекологом — про жіноче здоров'я"
+    },
+    {
+      "ru": "Совместный хайк и йога-практика на природе — для тех, кто живёт в Ванкувере",
+      "en": "Group hike and yoga practice in nature — for those who live in Vancouver",
+      "uk": "Спільний хайк та йога-практика на природі — для тих, хто живе у Ванкувері"
+    },
+    {
+      "ru": "Записи всех встреч",
+      "en": "Recordings of all meetings",
+      "uk": "Записи всіх зустрічей"
+    }
+  ],
   "guest": {
     "name": {
       "ru": "Гость месяца — уточняется",

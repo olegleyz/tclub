@@ -47,6 +47,21 @@ export default function MonthDetailPage() {
           ))}
         </div>
 
+        {/* Schedule (optional) */}
+        {month.schedule && month.schedule.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-xl text-text-hover mb-6">{t(ui.monthSchedule)}</h2>
+            <ul className="space-y-3">
+              {month.schedule.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-text leading-relaxed">
+                  <span className="text-gold mt-1 text-sm">&#10003;</span>
+                  <span>{t(item)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Guest */}
         <div className="bg-bg-card rounded-lg p-8 text-center">
           <h2 className="text-xl text-text-hover mb-6">{t(ui.guestOfMonth)}</h2>
