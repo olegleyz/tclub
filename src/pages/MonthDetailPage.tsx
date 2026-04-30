@@ -54,7 +54,7 @@ export default function MonthDetailPage() {
             <ul className="space-y-3">
               {month.schedule.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-text leading-relaxed">
-                  <span className="text-gold mt-1 text-sm">&#10003;</span>
+                  <span className="text-gold mt-1 text-sm" aria-hidden="true">&#10003;</span>
                   <span>{t(item)}</span>
                 </li>
               ))}
@@ -74,6 +74,8 @@ export default function MonthDetailPage() {
                   <img
                     src={assetUrl(g.image)}
                     alt={t(g.name)}
+                    loading="lazy"
+                    decoding="async"
                     className={`${month.guests.length === 1 ? 'w-32 h-32 mx-auto' : 'w-28 h-28'} rounded-full object-cover mb-4`}
                   />
                   <h3 className="text-text-hover font-medium text-lg mb-1">{t(g.name)}</h3>

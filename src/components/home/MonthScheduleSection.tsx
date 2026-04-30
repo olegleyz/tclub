@@ -23,7 +23,7 @@ export default function MonthScheduleSection({ month }: Props) {
         <ul className="space-y-4 text-left">
           {month.schedule.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-text leading-relaxed">
-              <span className="text-gold mt-1.5 text-sm">&#10003;</span>
+              <span className="text-gold mt-1.5 text-sm" aria-hidden="true">&#10003;</span>
               <span>{t(item)}</span>
             </li>
           ))}

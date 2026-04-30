@@ -46,6 +46,8 @@ function SingleGuest({ guest, t }: { guest: Guest; t: T }) {
         <img
           src={assetUrl(guest.image)}
           alt={t(guest.name)}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top"
         />
       </div>
@@ -63,6 +65,8 @@ function MultiGuest({ guest, t }: { guest: Guest; t: T }) {
         <img
           src={assetUrl(guest.image)}
           alt={t(guest.name)}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top"
         />
       </div>

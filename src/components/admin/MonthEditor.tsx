@@ -88,6 +88,7 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
         month,
         theme: { title: themeTitle, description: themeDesc },
         sections,
+        schedule: existing?.schedule,
         guests: [
           {
             name: guestName,
@@ -95,6 +96,7 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
             bio: guestBio,
             image: imagePath,
           },
+          ...(existing?.guests?.slice(1) ?? []),
         ],
         closingMessage,
         publishedAt: `${year}-${String(month).padStart(2, '0')}-01`,
