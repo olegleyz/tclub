@@ -1,6 +1,19 @@
 {
-  "current": "2026-04",
+  "current": "2026-05",
   "months": [
+    {
+      "id": "2026-05",
+      "theme": {
+        "ru": "Моё Тело",
+        "en": "My Body",
+        "uk": "Моє Тіло"
+      },
+      "guestName": {
+        "ru": "Юлия Лобашкова и Анастасия Биленко",
+        "en": "Yulia Lobashkova and Anastasia Bilenko",
+        "uk": "Юлія Лобашкова та Анастасія Біленко"
+      }
+    },
     {
       "id": "2026-04",
       "theme": {

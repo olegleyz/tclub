@@ -2,6 +2,7 @@ import { useSiteConfig, useMonthIndex, useMonth } from '../hooks/useContent';
 import HeroSection from '../components/home/HeroSection';
 import AboutSection from '../components/home/AboutSection';
 import MonthStructure from '../components/home/MonthStructure';
+import MonthScheduleSection from '../components/home/MonthScheduleSection';
 import OrganizersSection from '../components/home/OrganizersSection';
 import GuestSection from '../components/home/GuestSection';
 import OfferingsSection from '../components/home/OfferingsSection';
@@ -26,6 +27,7 @@ export default function HomePage() {
       <HeroSection config={config} month={currentMonth} />
       <AboutSection config={config} />
       <MonthStructure month={currentMonth} />
+      <MonthScheduleSection month={currentMonth} />
       <OrganizersSection config={config} />
       <GuestSection month={currentMonth} />
       <OfferingsSection config={config} />

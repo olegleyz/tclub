@@ -1,0 +1,141 @@
+{
+  "id": "2026-05",
+  "year": 2026,
+  "month": 5,
+  "theme": {
+    "title": {
+      "ru": "Моё Тело",
+      "en": "My Body",
+      "uk": "Моє Тіло"
+    },
+    "description": {
+      "ru": "Исследуем отношения с телом — слышим ли мы его, замечаем ли желания, даём ли заботу и бережность. Тело как опора и проводник, не просто инструмент.",
+      "en": "Exploring our relationship with the body — do we hear it, notice its needs, give it care and gentleness. The body as foundation and guide, not just an instrument.",
+      "uk": "Досліджуємо стосунки з тілом — чи чуємо його, чи помічаємо бажання, чи даємо турботу та дбайливість. Тіло як опора та провідник, не лише інструмент."
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ru": "Услышать тело",
+        "en": "Hearing the Body",
+        "uk": "Почути тіло"
+      },
+      "description": {
+        "ru": "Замечаем, что чувствует тело сейчас. Что в нём заглушено, что просит внимания. Начинаем с честного исследования текущих отношений.",
+        "en": "Noticing what the body feels right now. What is muted, what asks for attention. Starting with an honest look at our current relationship.",
+        "uk": "Помічаємо, що тіло відчуває зараз. Що в ньому приглушене, що просить уваги. Починаємо з чесного дослідження поточних стосунків."
+      }
+    },
+    {
+      "title": {
+        "ru": "Где разрыв",
+        "en": "Where the Disconnect Lives",
+        "uk": "Де розрив"
+      },
+      "description": {
+        "ru": "Видим, где живём «в голове», где идём через силу, потому что «надо», где не слышим телесных сигналов. Без оценки — просто увидеть.",
+        "en": "Seeing where we live 'in our heads,' where we push through because we 'must,' where we miss the body's signals. Without judgment — simply seeing.",
+        "uk": "Бачимо, де живемо «в голові», де йдемо через силу, бо «треба», де не чуємо тілесних сигналів. Без оцінки — просто побачити."
+      }
+    },
+    {
+      "title": {
+        "ru": "Вернуть контакт",
+        "en": "Restoring Contact",
+        "uk": "Повернути контакт"
+      },
+      "description": {
+        "ru": "Восстанавливаем чувствительность через телесные практики, коучинг, расстановки. От заботы и внимания — к новым ежедневным привычкам.",
+        "en": "Recovering sensitivity through body practices, coaching, constellations. From care and attention — to new daily habits.",
+        "uk": "Відновлюємо чутливість через тілесні практики, коучинг, розстановки. Від турботи та уваги — до нових щоденних звичок."
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "ru": "Фокус-настройка на теме месяца",
+      "en": "Focus and tuning into the month's theme",
+      "uk": "Фокус та налаштування на тему місяця"
+    },
+    {
+      "ru": "Книга месяца",
+      "en": "Book of the month",
+      "uk": "Книга місяця"
+    },
+    {
+      "ru": "Онлайн и офлайн встречи",
+      "en": "Online and offline meetings",
+      "uk": "Онлайн та офлайн зустрічі"
+    },
+    {
+      "ru": "Коучинговые и расстановочные практики",
+      "en": "Coaching and constellation practices",
+      "uk": "Коучингові та розстановочні практики"
+    },
+    {
+      "ru": "Telegram-чат",
+      "en": "Telegram chat",
+      "uk": "Telegram-чат"
+    },
+    {
+      "ru": "Онлайн-встреча с врачом-гинекологом — о женском здоровье",
+      "en": "Online session with a gynecologist — on women's health",
+      "uk": "Онлайн-зустріч з лікарем-гінекологом — про жіноче здоров'я"
+    },
+    {
+      "ru": "Совместный хайк и йога-практика на природе — для тех, кто живёт в Ванкувере",
+      "en": "Group hike and yoga practice in nature — for those who live in Vancouver",
+      "uk": "Спільний хайк та йога-практика на природі — для тих, хто живе у Ванкувері"
+    },
+    {
+      "ru": "Записи всех встреч",
+      "en": "Recordings of all meetings",
+      "uk": "Записи всіх зустрічей"
+    }
+  ],
+  "guests": [
+    {
+      "name": {
+        "ru": "Юлия Лобашкова",
+        "en": "Yulia Lobashkova",
+        "uk": "Юлія Лобашкова"
+      },
+      "role": {
+        "ru": "Врач-гинеколог",
+        "en": "Gynecologist",
+        "uk": "Лікар-гінеколог"
+      },
+      "bio": {
+        "ru": "Поговорим о женском здоровье и связи с телом — то, о чём редко спрашивают на приёме, но что важно знать.",
+        "en": "We will talk about women's health and the connection to the body — things rarely asked at the doctor's office but important to know.",
+        "uk": "Поговоримо про жіноче здоров'я та зв'язок з тілом — те, про що рідко питають на прийомі, але що важливо знати."
+      },
+      "image": "/images/guests/2026-05-yulia.jpeg"
+    },
+    {
+      "name": {
+        "ru": "Анастасия Биленко",
+        "en": "Anastasia Bilenko",
+        "uk": "Анастасія Біленко"
+      },
+      "role": {
+        "ru": "Психолог, психосоматолог",
+        "en": "Psychologist, psychosomatologist",
+        "uk": "Психолог, психосоматолог"
+      },
+      "bio": {
+        "ru": "Поговорим о том, как чувства и переживания отражаются в теле, и Анастасия проведёт практику «Примирение мозга с телом».",
+        "en": "We will talk about how feelings and experiences are reflected in the body, and Anastasia will lead the practice 'Reconciling the mind with the body'.",
+        "uk": "Поговоримо про те, як почуття та переживання відображаються в тілі, і Анастасія проведе практику «Примирення мозку з тілом»."
+      },
+      "image": "/images/guests/2026-05-anastasia.jpeg"
+    }
+  ],
+  "closingMessage": {
+    "ru": "Май может стать твоим месяцем встречи с телом — через слух, бережность и контакт.",
+    "en": "May can become your month of meeting your body — through listening, care, and contact.",
+    "uk": "Травень може стати твоїм місяцем зустрічі з тілом — через слух, дбайливість та контакт."
+  },
+  "publishedAt": "2026-05-01"
+}

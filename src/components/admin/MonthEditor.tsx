@@ -27,11 +27,11 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
   const [themeTitle, setThemeTitle] = useState<LocalizedString>(existing?.theme.title ?? emptyLocalized());
   const [themeDesc, setThemeDesc] = useState<LocalizedString>(existing?.theme.description ?? emptyLocalized());
   const [sections, setSections] = useState<MonthSection[]>(existing?.sections ?? [emptySection()]);
-  const [guestName, setGuestName] = useState<LocalizedString>(existing?.guest.name ?? emptyLocalized());
-  const [guestRole, setGuestRole] = useState<LocalizedString>(existing?.guest.role ?? emptyLocalized());
-  const [guestBio, setGuestBio] = useState<LocalizedString>(existing?.guest.bio ?? emptyLocalized());
+  const [guestName, setGuestName] = useState<LocalizedString>(existing?.guests[0]?.name ?? emptyLocalized());
+  const [guestRole, setGuestRole] = useState<LocalizedString>(existing?.guests[0]?.role ?? emptyLocalized());
+  const [guestBio, setGuestBio] = useState<LocalizedString>(existing?.guests[0]?.bio ?? emptyLocalized());
   const [guestImageFile, setGuestImageFile] = useState<File | null>(null);
-  const [guestImagePath] = useState(existing?.guest.image ?? '');
+  const [guestImagePath] = useState(existing?.guests[0]?.image ?? '');
   const [closingMessage, setClosingMessage] = useState<LocalizedString>(existing?.closingMessage ?? emptyLocalized());
   const [setAsCurrent, setSetAsCurrent] = useState(!existing);
   const [status, setStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
@@ -88,12 +88,16 @@ export default function MonthEditor({ token, existing, onDone }: Props) {
         month,
         theme: { title: themeTitle, description: themeDesc },
         sections,
-        guest: {
-          name: guestName,
-          role: guestRole,
-          bio: guestBio,
-          image: imagePath,
-        },
+        schedule: existing?.schedule,
+        guests: [
+          {
+            name: guestName,
+            role: guestRole,
+            bio: guestBio,
+            image: imagePath,
+          },
+          ...(existing?.guests?.slice(1) ?? []),
+        ],
         closingMessage,
         publishedAt: `${year}-${String(month).padStart(2, '0')}-01`,
       };
