@@ -148,6 +148,42 @@
         "uk": "Професійна бальна танцівниця з досвідом понад 17 років. Авторка дбайливої програми TriFlow, що поєднує танець, стретчинг, медитації та дихальні практики (пранаяму)."
       },
       "image": "/images/guests/2026-05-natalie.jpeg"
+    },
+    {
+      "name": {
+        "ru": "София Плетнёва",
+        "en": "Sofia Pletneva",
+        "uk": "Софія Плетньова"
+      },
+      "role": {
+        "ru": "Преподаватель хатха-йоги",
+        "en": "Hatha yoga teacher",
+        "uk": "Викладач хатха-йоги"
+      },
+      "bio": {
+        "ru": "Сертифицированный преподаватель хатха-йоги (200H CYT), практикует йогу и дыхательные техники более 15 лет.",
+        "en": "Certified hatha yoga teacher (200H CYT), has been practicing yoga and breathing techniques for over 15 years.",
+        "uk": "Сертифікований викладач хатха-йоги (200H CYT), практикує йогу та дихальні техніки понад 15 років."
+      },
+      "image": "/images/guests/2026-05-sofia.jpeg"
+    },
+    {
+      "name": {
+        "ru": "Зарина Хас",
+        "en": "Zarina Khas",
+        "uk": "Заріна Хас"
+      },
+      "role": {
+        "ru": "Фитнес-тренер, кинезиолог",
+        "en": "Group fitness trainer, kinesiologist",
+        "uk": "Фітнес-тренер, кінезіолог"
+      },
+      "bio": {
+        "ru": "Групповой фитнес-тренер, кинезиолог. Практикует семейные расстановки и регрессионную терапию.",
+        "en": "Group fitness trainer and kinesiologist. Practices family constellations and regression therapy.",
+        "uk": "Груповий фітнес-тренер, кінезіолог. Практикує сімейні розстановки та регресійну терапію."
+      },
+      "image": "/images/guests/2026-05-zarina.jpeg"
     }
   ],
   "closingMessage": {
