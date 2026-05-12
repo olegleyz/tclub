@@ -21,6 +21,15 @@ export const ui: Record<string, LocalizedString> = {
   archive: { ru: 'Архив', en: 'Archive', uk: 'Архів' },
   home: { ru: 'Главная', en: 'Home', uk: 'Головна' },
   april: { ru: 'Апрель', en: 'April', uk: 'Квітень' },
+  // Editorial chrome
+  inSession: { ru: 'В выпуске', en: 'In session', uk: 'У випуску' },
+  beginReading: { ru: 'Начать чтение', en: 'Begin reading', uk: 'Почати читання' },
+  editorsNote: { ru: 'Слово редактора', en: "Editor's note", uk: 'Слово редакторки' },
+  portrait: { ru: 'Портрет', en: 'Portrait', uk: 'Портрет' },
+  practice: { ru: 'Практика', en: 'Practice', uk: 'Практика' },
+  volume: { ru: 'Том V', en: 'Vol. V', uk: 'Том V' },
+  issueLabel: { ru: 'Выпуск', en: 'Issue', uk: 'Випуск' },
+  cover: { ru: 'Обложка', en: 'Cover', uk: 'Обкладинка' },
 };
 
 export const monthNames: Record<string, LocalizedString> = {

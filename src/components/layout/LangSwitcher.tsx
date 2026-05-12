@@ -11,19 +11,20 @@ export default function LangSwitcher() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="flex gap-1 text-sm">
-      {langs.map(({ code, label }) => (
-        <button
-          key={code}
-          onClick={() => setLang(code)}
-          className={`px-2 py-1 rounded transition-colors ${
-            lang === code
-              ? 'bg-accent text-white'
-              : 'text-text hover:text-text-hover'
-          }`}
-        >
-          {label}
-        </button>
+    <div className="inline-flex items-center gap-3 mono-cap-sm">
+      {langs.map(({ code, label }, i) => (
+        <span key={code} className="inline-flex items-center">
+          {i > 0 && <span className="mr-3 opacity-30">·</span>}
+          <button
+            onClick={() => setLang(code)}
+            className={`cursor-pointer transition-colors ${
+              lang === code ? 'text-clay' : 'text-ink-soft hover:text-ink'
+            }`}
+            aria-pressed={lang === code}
+          >
+            {label}
+          </button>
+        </span>
       ))}
     </div>
   );
