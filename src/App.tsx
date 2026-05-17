@@ -5,6 +5,7 @@ import Header from './components/layout/Header';
 import HomePage from './pages/HomePage';
 import ArchivePage from './pages/ArchivePage';
 import MonthDetailPage from './pages/MonthDetailPage';
+import CapsulePage from './pages/CapsulePage';
 
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/archive" element={<ArchivePage />} />
           <Route path="/archive/:monthId" element={<MonthDetailPage />} />
+          <Route path="/archive/:monthId/capsule" element={<CapsulePage />} />
           <Route path="/admin" element={
             <Suspense fallback={<Loading />}>
               <AdminPage />

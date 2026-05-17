@@ -77,5 +77,13 @@
     "en": "April can become your month of stability, grounding, and growth.",
     "uk": "Квітень може стати твоїм місяцем про стійкість, опору та зростання."
   },
-  "publishedAt": "2026-04-01"
+  "publishedAt": "2026-04-01",
+  "capsule": {
+    "available": true,
+    "price": {
+      "amount": "15",
+      "currency": "CAD"
+    },
+    "stripeLink": null
+  }
 }

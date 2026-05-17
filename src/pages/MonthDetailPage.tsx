@@ -3,6 +3,7 @@ import { useMonth } from '../hooks/useContent';
 import { useLang } from '../hooks/useLang';
 import { ui, monthNames } from '../lib/ui-strings';
 import { assetUrl } from '../lib/assets';
+import CapsulePromoBlock from '../components/capsule/CapsulePromoBlock';
 
 export default function MonthDetailPage() {
   const { monthId } = useParams<{ monthId: string }>();
@@ -91,6 +92,10 @@ export default function MonthDetailPage() {
 
         {month.closingMessage && (
           <p className="text-text-hover text-center italic mt-12">{t(month.closingMessage)}</p>
+        )}
+
+        {month.capsule?.available && (
+          <CapsulePromoBlock month={month} variant="archive-detail" />
         )}
       </div>
     </main>

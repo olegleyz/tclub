@@ -8,11 +8,14 @@ import GuestSection from '../components/home/GuestSection';
 import OfferingsSection from '../components/home/OfferingsSection';
 import PricingSection from '../components/home/PricingSection';
 import ContactSection from '../components/home/ContactSection';
+import CapsulePromoBlock from '../components/capsule/CapsulePromoBlock';
 
 export default function HomePage() {
   const config = useSiteConfig();
   const monthIndex = useMonthIndex();
   const currentMonth = useMonth(monthIndex?.current);
+  const previousMonthEntry = monthIndex?.months.find(m => m.id !== monthIndex.current);
+  const previousMonth = useMonth(previousMonthEntry?.id);
 
   if (!config || !currentMonth) {
     return (
@@ -30,6 +33,9 @@ export default function HomePage() {
       <MonthScheduleSection month={currentMonth} />
       <OrganizersSection config={config} />
       <GuestSection month={currentMonth} />
+      {previousMonth?.capsule?.available && (
+        <CapsulePromoBlock month={previousMonth} variant="home-light" />
+      )}
       <OfferingsSection config={config} />
       <PricingSection config={config} />
       <ContactSection />
