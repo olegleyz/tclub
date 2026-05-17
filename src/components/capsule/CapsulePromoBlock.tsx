@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import type { Month } from '../../types/month';
 import { useLang } from '../../hooks/useLang';
 import CapsuleBuyButton from './CapsuleBuyButton';
@@ -8,12 +7,20 @@ interface Props {
   variant: 'archive-detail' | 'home-light' | 'home-full' | 'home-cross-link';
 }
 
+const APRIL_INSIDE_ITEMS = [
+  '4 волны темы — Замечать, Углубляться, Ограничения, Расширение',
+  'Сквозные ритуалы недели — четверг благодарности, пятница красоты',
+  'Гость месяца — Кристина Барташук, финансист',
+  'Книга месяца — Герман Гессе, «Сиддхартха» + 2 цитаты',
+  'Три голоса участниц апреля',
+  'Инсайт месяца — сдвиг с «у меня недостаточно» на «я уже создаю»',
+];
+
 export default function CapsulePromoBlock({ month, variant }: Props) {
   const { t } = useLang();
   if (!month.capsule?.available) return null;
 
   const themeTitle = t(month.theme.title);
-  const capsulePath = `/archive/${month.id}/capsule`;
 
   if (variant === 'archive-detail') {
     return (
@@ -26,19 +33,18 @@ export default function CapsulePromoBlock({ month, variant }: Props) {
             «{themeTitle}» — на одну страницу
           </h2>
           <p className="text-text leading-relaxed mb-8">
-            Памятка апреля: что мы прошли вместе, гость месяца, цитаты из книги
-            и голоса участниц. Для тех, кто был в клубе — как memory-keeper. Для
-            тех, кто ещё нет — окно в то, чем мы живём.
+            Памятка апреля для тех, кто был в клубе, и окно для тех, кто ещё
+            нет. Внутри:
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <CapsuleBuyButton capsule={month.capsule} />
-            <Link
-              to={capsulePath}
-              className="text-accent hover:text-accent-hover transition-colors text-sm underline-offset-4 hover:underline"
-            >
-              Посмотреть, что внутри
-            </Link>
-          </div>
+          <ul className="text-left space-y-2 mb-10 max-w-md mx-auto">
+            {APRIL_INSIDE_ITEMS.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-text leading-relaxed">
+                <span className="text-gold mt-1.5 text-xs flex-shrink-0" aria-hidden="true">●</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <CapsuleBuyButton capsule={month.capsule} />
         </div>
       </section>
     );
@@ -47,27 +53,26 @@ export default function CapsulePromoBlock({ month, variant }: Props) {
   if (variant === 'home-full') {
     return (
       <section className="py-20 px-4 bg-bg-warm">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <p className="text-gold uppercase tracking-widest text-xs mb-3">
             Капсула апреля
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-text-hover mb-4">
             «{themeTitle}»
           </h2>
-          <p className="text-text leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-text leading-relaxed mb-8 max-w-xl mx-auto">
             Не были в апреле? Апрельская капсула «{themeTitle}» собрана на одну
-            страницу: что мы прошли вместе, гость месяца, цитаты из книги,
-            голоса участниц.
+            страницу. Внутри:
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <CapsuleBuyButton capsule={month.capsule} />
-            <Link
-              to={capsulePath}
-              className="text-accent hover:text-accent-hover transition-colors text-sm underline-offset-4 hover:underline"
-            >
-              Посмотреть, что внутри
-            </Link>
-          </div>
+          <ul className="text-left space-y-2 mb-10 max-w-md mx-auto">
+            {APRIL_INSIDE_ITEMS.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-text leading-relaxed">
+                <span className="text-gold mt-1.5 text-xs flex-shrink-0" aria-hidden="true">●</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <CapsuleBuyButton capsule={month.capsule} />
         </div>
       </section>
     );
@@ -81,22 +86,16 @@ export default function CapsulePromoBlock({ month, variant }: Props) {
           <p className="text-gold uppercase tracking-widest text-xs mb-1">
             Капсула апреля
           </p>
-          <p className="font-serif text-xl md:text-2xl text-text-hover mb-1">
+          <p className="font-serif text-xl md:text-2xl text-text-hover mb-2">
             «{themeTitle}»
           </p>
           <p className="text-text text-sm leading-relaxed">
-            Не были в апреле — апрельская капсула доступна за{' '}
-            {month.capsule.price.amount} {month.capsule.price.currency}.
+            Памятка месяца на одну страницу: 4 волны темы, гость Кристина,
+            цитаты Гессе, голоса участниц, инсайт.
           </p>
         </div>
-        <div className="flex-shrink-0 flex flex-col gap-2 items-center">
+        <div className="flex-shrink-0">
           <CapsuleBuyButton capsule={month.capsule} size="sm" />
-          <Link
-            to={capsulePath}
-            className="text-accent hover:text-accent-hover transition-colors text-xs underline-offset-4 hover:underline"
-          >
-            что внутри
-          </Link>
         </div>
       </div>
     </div>
