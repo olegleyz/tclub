@@ -84,7 +84,7 @@
       "amount": "15",
       "currency": "CAD"
     },
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/8x24gzbgg3U3c6N9D0dMI0f",
     "url": "/capsule/2026-04-2g3ws5k3/"
   }
 }
