@@ -23,6 +23,16 @@ export interface MonthTheme {
   description: LocalizedString;
 }
 
+export interface MonthCapsule {
+  available: boolean;
+  price: {
+    amount: string;
+    currency: string;
+  };
+  stripeLink: string | null;
+  url?: string;
+}
+
 export interface Month {
   id: string;
   year: number;
@@ -33,6 +43,7 @@ export interface Month {
   guests: Guest[];
   closingMessage: LocalizedString;
   publishedAt: string;
+  capsule?: MonthCapsule;
 }
 
 export interface MonthIndexEntry {

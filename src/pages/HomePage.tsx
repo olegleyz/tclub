@@ -13,6 +13,8 @@ export default function HomePage() {
   const config = useSiteConfig();
   const monthIndex = useMonthIndex();
   const currentMonth = useMonth(monthIndex?.current);
+  const previousMonthEntry = monthIndex?.months.find(m => m.id !== monthIndex.current);
+  const previousMonth = useMonth(previousMonthEntry?.id);
 
   if (!config || !currentMonth) {
     return (
@@ -24,7 +26,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <HeroSection config={config} month={currentMonth} />
+      <HeroSection config={config} month={currentMonth} previousMonth={previousMonth ?? undefined} />
       <AboutSection config={config} />
       <MonthStructure month={currentMonth} />
       <MonthScheduleSection month={currentMonth} />
