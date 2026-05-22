@@ -230,6 +230,16 @@ body {
   max-width: 32em;
 }
 
+.capsule__keepsake {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted, rgba(0, 0, 0, 0.55));
+  max-width: 32em;
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 600px) {
   .capsule__cover-frame { aspect-ratio: auto; }
   .capsule__cover-image { aspect-ratio: 3 / 4; }
