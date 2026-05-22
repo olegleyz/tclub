@@ -29,13 +29,13 @@ export default function HomePage() {
     <main>
       <HeroSection config={config} month={currentMonth} />
       <AboutSection config={config} />
+      {previousMonth?.capsule?.available && (
+        <CapsulePromoBlock month={previousMonth} variant="home-light" />
+      )}
       <MonthStructure month={currentMonth} />
       <MonthScheduleSection month={currentMonth} />
       <OrganizersSection config={config} />
       <GuestSection month={currentMonth} />
-      {previousMonth?.capsule?.available && (
-        <CapsulePromoBlock month={previousMonth} variant="home-light" />
-      )}
       <OfferingsSection config={config} />
       <PricingSection config={config} />
       <ContactSection />
