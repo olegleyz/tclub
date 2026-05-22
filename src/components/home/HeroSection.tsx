@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLang } from '../../hooks/useLang';
 import { ui } from '../../lib/ui-strings';
 import type { SiteConfig, Month } from '../../types/month';
@@ -6,12 +7,17 @@ import { monthNames } from '../../lib/ui-strings';
 interface Props {
   config: SiteConfig;
   month: Month;
+  previousMonth?: Month;
 }
 
-export default function HeroSection({ config, month }: Props) {
+export default function HeroSection({ config, month, previousMonth }: Props) {
   const { t } = useLang();
 
   const monthLabel = monthNames[String(month.month)];
+  const prevMonthLabel = previousMonth
+    ? monthNames[String(previousMonth.month)]
+    : undefined;
+  const showCapsuleStrip = previousMonth?.capsule?.available;
 
   return (
     <section
@@ -47,6 +53,38 @@ export default function HeroSection({ config, month }: Props) {
           {t(ui.learnMore)}
         </button>
       </div>
+
+      {showCapsuleStrip && previousMonth && (
+        <Link
+          to={`/archive/${previousMonth.id}`}
+          className="group absolute bottom-0 inset-x-0 z-10
+                     border-t border-divider/70
+                     bg-bg/40 backdrop-blur-[2px]
+                     px-4 py-3 md:py-4
+                     flex items-center justify-center gap-3 md:gap-5
+                     text-center
+                     hover:bg-bg/70 transition-colors duration-500
+                     animate-fade-up"
+          style={{ animationDelay: '0.8s' }}
+        >
+          {prevMonthLabel && (
+            <>
+              <span className="hidden md:inline text-gold text-[10px] tracking-[0.22em] uppercase">
+                Капсула · {t(prevMonthLabel)} {previousMonth.year}
+              </span>
+              <span className="hidden md:inline h-px w-8 bg-gold/40" aria-hidden />
+            </>
+          )}
+          <span className="font-serif italic text-text-hover text-sm md:text-base">
+            «{t(previousMonth.theme.title)}»
+          </span>
+          <span className="text-accent text-sm tracking-wide
+                           transition-transform duration-300
+                           group-hover:translate-x-1">
+            →
+          </span>
+        </Link>
+      )}
     </section>
   );
 }

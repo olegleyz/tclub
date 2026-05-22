@@ -8,7 +8,6 @@ import GuestSection from '../components/home/GuestSection';
 import OfferingsSection from '../components/home/OfferingsSection';
 import PricingSection from '../components/home/PricingSection';
 import ContactSection from '../components/home/ContactSection';
-import CapsulePromoBlock from '../components/capsule/CapsulePromoBlock';
 
 export default function HomePage() {
   const config = useSiteConfig();
@@ -27,11 +26,8 @@ export default function HomePage() {
 
   return (
     <main>
-      <HeroSection config={config} month={currentMonth} />
+      <HeroSection config={config} month={currentMonth} previousMonth={previousMonth ?? undefined} />
       <AboutSection config={config} />
-      {previousMonth?.capsule?.available && (
-        <CapsulePromoBlock month={previousMonth} variant="home-light" />
-      )}
       <MonthStructure month={currentMonth} />
       <MonthScheduleSection month={currentMonth} />
       <OrganizersSection config={config} />
