@@ -30,6 +30,7 @@ export interface MonthCapsule {
     currency: string;
   };
   stripeLink: string | null;
+  url?: string;
 }
 
 export interface Month {

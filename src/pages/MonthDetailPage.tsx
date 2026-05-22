@@ -33,6 +33,10 @@ export default function MonthDetailPage() {
         <p className="text-accent text-lg mb-8">{t(month.theme.title)}</p>
         <p className="text-text leading-relaxed mb-12">{t(month.theme.description)}</p>
 
+        {month.capsule?.available && (
+          <CapsulePromoBlock month={month} variant="archive-detail" />
+        )}
+
         {/* Sections */}
         <div className="space-y-8 mb-12">
           {month.sections.map((section, i) => (
@@ -92,10 +96,6 @@ export default function MonthDetailPage() {
 
         {month.closingMessage && (
           <p className="text-text-hover text-center italic mt-12">{t(month.closingMessage)}</p>
-        )}
-
-        {month.capsule?.available && (
-          <CapsulePromoBlock month={month} variant="archive-detail" />
         )}
       </div>
     </main>
