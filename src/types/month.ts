@@ -54,6 +54,7 @@ export interface MonthIndexEntry {
 
 export interface MonthIndex {
   current: string;
+  capsuleMonth?: string;
   months: MonthIndexEntry[];
 }
 

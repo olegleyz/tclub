@@ -7,17 +7,17 @@ import { monthNames } from '../../lib/ui-strings';
 interface Props {
   config: SiteConfig;
   month: Month;
-  previousMonth?: Month;
+  capsuleMonth?: Month;
 }
 
-export default function HeroSection({ config, month, previousMonth }: Props) {
+export default function HeroSection({ config, month, capsuleMonth }: Props) {
   const { t } = useLang();
 
   const monthLabel = monthNames[String(month.month)];
-  const prevMonthLabel = previousMonth
-    ? monthNames[String(previousMonth.month)]
+  const capsuleMonthLabel = capsuleMonth
+    ? monthNames[String(capsuleMonth.month)]
     : undefined;
-  const showCapsuleStrip = previousMonth?.capsule?.available;
+  const showCapsuleStrip = capsuleMonth?.capsule?.available;
 
   return (
     <section
@@ -54,9 +54,9 @@ export default function HeroSection({ config, month, previousMonth }: Props) {
         </button>
       </div>
 
-      {showCapsuleStrip && previousMonth && (
+      {showCapsuleStrip && capsuleMonth && (
         <Link
-          to={`/archive/${previousMonth.id}`}
+          to={`/archive/${capsuleMonth.id}`}
           className="group absolute bottom-0 inset-x-0 z-10
                      border-t border-divider/70
                      bg-bg/40 backdrop-blur-[2px]
@@ -67,16 +67,16 @@ export default function HeroSection({ config, month, previousMonth }: Props) {
                      animate-fade-up"
           style={{ animationDelay: '0.8s' }}
         >
-          {prevMonthLabel && (
+          {capsuleMonthLabel && (
             <>
               <span className="hidden md:inline text-gold text-[10px] tracking-[0.22em] uppercase">
-                Капсула · {t(prevMonthLabel)} {previousMonth.year}
+                Капсула · {t(capsuleMonthLabel)} {capsuleMonth.year}
               </span>
               <span className="hidden md:inline h-px w-8 bg-gold/40" aria-hidden />
             </>
           )}
           <span className="font-serif italic text-text-hover text-sm md:text-base">
-            «{t(previousMonth.theme.title)}»
+            «{t(capsuleMonth.theme.title)}»
           </span>
           <span className="text-accent text-sm tracking-wide
                            transition-transform duration-300

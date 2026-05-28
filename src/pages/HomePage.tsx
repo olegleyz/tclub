@@ -13,8 +13,9 @@ export default function HomePage() {
   const config = useSiteConfig();
   const monthIndex = useMonthIndex();
   const currentMonth = useMonth(monthIndex?.current);
-  const previousMonthEntry = monthIndex?.months.find(m => m.id !== monthIndex.current);
-  const previousMonth = useMonth(previousMonthEntry?.id);
+  const fallbackCapsuleMonthId = monthIndex?.months.find(m => m.id !== monthIndex.current)?.id;
+  const capsuleMonthId = monthIndex?.capsuleMonth ?? fallbackCapsuleMonthId;
+  const capsuleMonth = useMonth(capsuleMonthId);
 
   if (!config || !currentMonth) {
     return (
@@ -26,7 +27,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <HeroSection config={config} month={currentMonth} previousMonth={previousMonth ?? undefined} />
+      <HeroSection config={config} month={currentMonth} capsuleMonth={capsuleMonth ?? undefined} />
       <AboutSection config={config} />
       <MonthStructure month={currentMonth} />
       <MonthScheduleSection month={currentMonth} />

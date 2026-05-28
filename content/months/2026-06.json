@@ -1,0 +1,144 @@
+{
+  "id": "2026-06",
+  "year": 2026,
+  "month": 6,
+  "theme": {
+    "title": {
+      "ru": "Красота",
+      "en": "Beauty",
+      "uk": "Краса"
+    },
+    "description": {
+      "ru": "Весь июнь исследуем красоту — внешнюю и внутреннюю. Учимся замечать её в себе, в жизни, в деталях, в состояниях, в других людях.",
+      "en": "All through June we explore beauty — outer and inner. Learning to notice it in ourselves, in life, in details, in states, in other people.",
+      "uk": "Увесь червень досліджуємо красу — зовнішню та внутрішню. Вчимося помічати її в собі, у житті, у деталях, у станах, в інших людях."
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ru": "Замечать красивое",
+        "en": "Noticing the Beautiful",
+        "uk": "Помічати красиве"
+      },
+      "description": {
+        "ru": "Учимся видеть красоту в деталях — в свете, форме, движении, в обычных вещах. С чего начинается её присутствие в дне.",
+        "en": "Learning to see beauty in details — in light, form, movement, in everyday things. Where its presence in the day begins.",
+        "uk": "Вчимося бачити красу в деталях — у світлі, формі, русі, у звичайних речах. З чого починається її присутність у дні."
+      }
+    },
+    {
+      "title": {
+        "ru": "Держать фокус на красоте",
+        "en": "Holding Focus on Beauty",
+        "uk": "Тримати фокус на красі"
+      },
+      "description": {
+        "ru": "То, что наполняет, вдохновляет, раскрывает — возвращаем в центр внимания. Красота не в моменте, а в навыке её замечать.",
+        "en": "What fills, inspires, reveals — we bring back to the centre of attention. Beauty isn't in the moment; it's in the skill of noticing.",
+        "uk": "Те, що наповнює, надихає, розкриває — повертаємо в центр уваги. Краса не в моменті, а у вмінні її помічати."
+      }
+    },
+    {
+      "title": {
+        "ru": "Расширить через встречу",
+        "en": "Expanding Through Each Other",
+        "uk": "Розширити через зустріч"
+      },
+      "description": {
+        "ru": "Для каждой из нас красота своя. Соприкасаясь с проявленностью, взглядом и опытом друг друга, мы видим её новые грани.",
+        "en": "Each of us has her own beauty. Through touching the expression, gaze, and experience of one another, we see new facets of it.",
+        "uk": "Для кожної з нас краса своя. Доторкаючись до прояву, погляду та досвіду одна одної, бачимо її нові грані."
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "ru": "Онлайн-встречи",
+      "en": "Online meetings",
+      "uk": "Онлайн-зустрічі"
+    },
+    {
+      "ru": "Коучинг и расстановочные практики",
+      "en": "Coaching and constellation practices",
+      "uk": "Коучингові та розстановочні практики"
+    },
+    {
+      "ru": "Совместное чтение книги",
+      "en": "Joint book reading",
+      "uk": "Спільне читання книги"
+    },
+    {
+      "ru": "Общение и поддержка",
+      "en": "Conversation and support",
+      "uk": "Спілкування та підтримка"
+    },
+    {
+      "ru": "Пространство для замедления, вдохновения и красоты",
+      "en": "A space for slowing down, inspiration, and beauty",
+      "uk": "Простір для уповільнення, натхнення та краси"
+    }
+  ],
+  "guests": [
+    {
+      "name": {
+        "ru": "Елена",
+        "en": "Elena",
+        "uk": "Олена"
+      },
+      "role": {
+        "ru": "Floral designer, создательница цветочных встреч",
+        "en": "Floral designer, creator of flower gatherings",
+        "uk": "Floral designer, авторка квіткових зустрічей"
+      },
+      "bio": {
+        "ru": "Создаёт красоту из самой красоты природы. Работает с живыми цветами — тонко чувствует их форму, настроение и энергию, превращая их в живые композиции и атмосферные цветочные истории для женщин.",
+        "en": "Creates beauty from nature's own beauty. Works with fresh flowers — feeling their form, mood, and energy, turning them into living compositions and atmospheric floral stories for women.",
+        "uk": "Створює красу із самої краси природи. Працює з живими квітами — тонко відчуває їхню форму, настрій та енергію, перетворюючи на живі композиції та атмосферні квіткові історії для жінок."
+      },
+      "image": "/images/guests/2026-06-elena.jpg"
+    },
+    {
+      "name": {
+        "ru": "Марина",
+        "en": "Marina",
+        "uk": "Марина"
+      },
+      "role": {
+        "ru": "Косметолог, основательница Del Mar Med Spa",
+        "en": "Cosmetologist, founder of Del Mar Med Spa",
+        "uk": "Косметолог, засновниця Del Mar Med Spa"
+      },
+      "bio": {
+        "ru": "Специалист по лазерной эпиляции. Помогает женщинам чувствовать себя увереннее через уход, эстетику и маленькие ритуалы любви к себе. Близки темы женской энергии, трансформации и состояния «я достойна лучшего».",
+        "en": "Laser hair removal specialist. Helps women feel more confident through care, aesthetics, and small rituals of self-love. Close to themes of feminine energy, transformation, and the state of 'I deserve better.'",
+        "uk": "Спеціалістка з лазерної епіляції. Допомагає жінкам почуватися впевненіше через догляд, естетику та маленькі ритуали любові до себе. Близькі теми жіночої енергії, трансформації та стану «я гідна кращого»."
+      },
+      "image": "/images/guests/2026-06-marina.jpg"
+    },
+    {
+      "name": {
+        "ru": "Екатерина",
+        "en": "Ekaterina",
+        "uk": "Катерина"
+      },
+      "role": {
+        "ru": "Мастер мейкапа, создательница коллекции одежды",
+        "en": "Makeup artist, creator of a clothing collection",
+        "uk": "Майстерка мейкапу, авторка колекції одягу"
+      },
+      "bio": {
+        "ru": "Видит уникальность каждой женщины и помогает подчеркнуть естественную красоту с помощью декоративной косметики.",
+        "en": "Sees the uniqueness in every woman and helps reveal her natural beauty through decorative cosmetics.",
+        "uk": "Бачить унікальність кожної жінки та допомагає підкреслити природну красу за допомогою декоративної косметики."
+      },
+      "image": "/images/guests/2026-06-ekaterina.jpg"
+    }
+  ],
+  "closingMessage": {
+    "ru": "Давайте вместе сделаем красоту ещё более присутствующей — в нашей жизни и в самих себе.",
+    "en": "Let's make beauty even more present together — in our lives and in ourselves.",
+    "uk": "Зробімо разом красу ще більш присутньою — у нашому житті та в нас самих."
+  },
+  "publishedAt": "2026-06-01"
+}

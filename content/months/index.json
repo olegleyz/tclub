@@ -1,6 +1,20 @@
 {
-  "current": "2026-05",
+  "current": "2026-06",
+  "capsuleMonth": "2026-04",
   "months": [
+    {
+      "id": "2026-06",
+      "theme": {
+        "ru": "Красота",
+        "en": "Beauty",
+        "uk": "Краса"
+      },
+      "guestName": {
+        "ru": "Елена, Марина и Екатерина",
+        "en": "Elena, Marina and Ekaterina",
+        "uk": "Олена, Марина та Катерина"
+      }
+    },
     {
       "id": "2026-05",
       "theme": {
