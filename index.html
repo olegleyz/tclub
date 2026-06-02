@@ -26,12 +26,31 @@
     <script data-goatcounter="https://tclub.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script>
-      // HashRouter-переходы (#/archive → #/archive/2026-04) считаем вручную.
-      window.addEventListener('hashchange', function () {
-        if (window.goatcounter && window.goatcounter.count) {
-          window.goatcounter.count({ path: location.hash.replace(/^#/, '') || '/' });
+      // SPA-переходы. react-router (HashRouter) навигирует через history.pushState,
+      // а pushState НЕ генерирует событие 'hashchange' — поэтому одного слушателя hashchange
+      // недостаточно (считалась бы только стартовая «/»). Патчим pushState/replaceState
+      // и слушаем popstate (back/forward) + hashchange — покрываем все способы навигации.
+      (function () {
+        var last = location.hash.replace(/^#/, '') || '/';
+        function track() {
+          var h = location.hash.replace(/^#/, '') || '/';
+          if (h === last) return;            // не дублируем тот же роут
+          last = h;
+          if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({ path: h });
+          }
         }
-      });
+        ['pushState', 'replaceState'].forEach(function (m) {
+          var orig = history[m];
+          history[m] = function () {
+            var r = orig.apply(this, arguments);
+            track();
+            return r;
+          };
+        });
+        window.addEventListener('popstate', track);
+        window.addEventListener('hashchange', track);
+      })();
     </script>
   </body>
 </html>
