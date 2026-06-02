@@ -619,28 +619,34 @@
 <script src="toc.js"></script>
 
 <!-- Аналитика: GoatCounter — cookieless, агрегат, без consent-баннера. -->
-<!-- Два уровня: (1) просмотр страницы = «Открыли» (count.js, автоматически); -->
-<!-- (2) событие «Вчитались» = доскролл ≥ 50% ИЛИ ≥ 20 сек на странице. -->
-<!-- Дашборд: https://tclub.goatcounter.com -->
+<!-- Капсула считается двумя ИМЕНОВАННЫМИ событиями (а не raw-просмотром пути), -->
+<!-- чтобы в дашборде были понятные ярлыки, а не строка /capsule/2026-04-2g3ws5k3: -->
+<!--   «Капсула апрель — открыли»   = загрузка страницы (переход по ссылке); -->
+<!--   «Капсула апрель — вчитались» = доскролл ≥ 50% ИЛИ ≥ 20 сек на странице. -->
+<!-- no_onload отключает автоматический pageview. Дашборд: https://tclub.goatcounter.com -->
+<script>window.goatcounter = { no_onload: true };</script>
 <script data-goatcounter="https://tclub.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <script>
-  // Прокси «вчитался, а не просто открыл»: один агрегатный event,
-  // когда посетитель доскроллил до 50% страницы ЛИБО провёл на ней ≥ 20 сек.
   // Только counts, никакой персональной информации.
   (function () {
+    function whenReady(fn, tries) {
+      if (window.goatcounter && window.goatcounter.count) { fn(); }
+      else if ((tries || 0) < 20) { setTimeout(function () { whenReady(fn, (tries || 0) + 1); }, 300); }
+    }
+    // «Открыли»: загрузка страницы (count.js с no_onload сам не считает).
+    whenReady(function () {
+      window.goatcounter.count({ path: 'capsule-open/2026-04', title: 'Капсула апрель — открыли', event: true });
+    });
+    // «Вчитались»: доскролл ≥ 50% ИЛИ ≥ 20 сек. Срабатывает один раз.
     var fired = false;
     function fireEngaged() {
       if (fired) return;
       fired = true;
       cleanup();
-      if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({
-          path: 'capsule-engaged/2026-04',
-          title: 'Капсула апрель — вчитались',
-          event: true
-        });
-      }
+      whenReady(function () {
+        window.goatcounter.count({ path: 'capsule-engaged/2026-04', title: 'Капсула апрель — вчитались', event: true });
+      });
     }
     function onScroll() {
       var doc = document.documentElement;
