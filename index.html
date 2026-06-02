@@ -10,5 +10,28 @@
   <body class="bg-bg text-text">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Аналитика: GoatCounter — cookieless, агрегат, без consent-баннера. -->
+    <!-- Считает просмотры всех страниц сайта. Дашборд: https://tclub.goatcounter.com -->
+    <!-- Сайт на HashRouter (#/archive/...), поэтому путь берём из location.hash, -->
+    <!-- иначе все страницы записывались бы как «/». -->
+    <script>
+      window.goatcounter = {
+        path: function (p) {
+          var h = location.hash.replace(/^#/, '');
+          return h || p || '/';
+        }
+      };
+    </script>
+    <script data-goatcounter="https://tclub.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script>
+      // HashRouter-переходы (#/archive → #/archive/2026-04) считаем вручную.
+      window.addEventListener('hashchange', function () {
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: location.hash.replace(/^#/, '') || '/' });
+        }
+      });
+    </script>
   </body>
 </html>

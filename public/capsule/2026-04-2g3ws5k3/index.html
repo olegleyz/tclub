@@ -618,5 +618,43 @@
 <script src="script.js"></script>
 <script src="toc.js"></script>
 
+<!-- Аналитика: GoatCounter — cookieless, агрегат, без consent-баннера. -->
+<!-- Два уровня: (1) просмотр страницы = «Открыли» (count.js, автоматически); -->
+<!-- (2) событие «Вчитались» = доскролл ≥ 50% ИЛИ ≥ 20 сек на странице. -->
+<!-- Дашборд: https://tclub.goatcounter.com -->
+<script data-goatcounter="https://tclub.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+  // Прокси «вчитался, а не просто открыл»: один агрегатный event,
+  // когда посетитель доскроллил до 50% страницы ЛИБО провёл на ней ≥ 20 сек.
+  // Только counts, никакой персональной информации.
+  (function () {
+    var fired = false;
+    function fireEngaged() {
+      if (fired) return;
+      fired = true;
+      cleanup();
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          path: 'capsule-engaged/2026-04',
+          title: 'Капсула апрель — вчитались',
+          event: true
+        });
+      }
+    }
+    function onScroll() {
+      var doc = document.documentElement;
+      var reach = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+      if (reach >= 0.5) fireEngaged();
+    }
+    function cleanup() {
+      window.removeEventListener('scroll', onScroll);
+      if (timer) clearTimeout(timer);
+    }
+    var timer = setTimeout(fireEngaged, 20000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+
 </body>
 </html>
