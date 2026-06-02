@@ -133,6 +133,24 @@
         "uk": "Бачить унікальність кожної жінки та допомагає підкреслити природну красу за допомогою декоративної косметики."
       },
       "image": "/images/guests/2026-06-ekaterina.jpg"
+    },
+    {
+      "name": {
+        "ru": "Лалита Амба",
+        "en": "Lalitā Amba",
+        "uk": "Лаліта Амба"
+      },
+      "role": {
+        "ru": "Практик тибетской медицины, акупунктура и фитотерапия. The Village Clinic",
+        "en": "Tibetan Medicine Practitioner, acupuncture & herbology. The Village Clinic",
+        "uk": "Практик тибетської медицини, акупунктура та фітотерапія. The Village Clinic"
+      },
+      "bio": {
+        "ru": "Более 15 лет опыта в интегративной медицине. Объединяет знания и опыт восточной и западной медицины, глубокую пульсовую диагностику, фитотерапию и нестандартный интегративный подход к здоровью.",
+        "en": "Over 15 years of experience in integrative medicine. Combines the knowledge and practice of Eastern and Western medicine, deep pulse diagnosis, herbal therapy, and an unconventional integrative approach to health.",
+        "uk": "Понад 15 років досвіду в інтегративній медицині. Поєднує знання та досвід східної і західної медицини, глибоку пульсову діагностику, фітотерапію та нестандартний інтегративний підхід до здоров'я."
+      },
+      "image": "/images/guests/2026-06-lalita.jpg"
     }
   ],
   "closingMessage": {
