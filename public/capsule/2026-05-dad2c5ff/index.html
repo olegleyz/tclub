@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>№ 05 · Май 2026 · t-club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5efe3;
+      --bg-warm: #ede5d4;
+      --paper: #fbf7ee;
+      --text: #6d5d4e;
+      --strong: #2e1f15;
+      --accent: #b85f48;
+      --rose: #8f3f52;
+      --gold: #b89a5a;
+      --divider: #ddd3c1;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.72;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-link {
+      position: fixed;
+      left: 18px;
+      top: 18px;
+      z-index: 10;
+      padding: 7px 12px;
+      border: 1px solid rgba(251, 247, 238, 0.44);
+      border-radius: 999px;
+      background: rgba(46, 31, 21, 0.42);
+      color: var(--paper);
+      font-size: 0.76rem;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .site-link:hover {
+      background: rgba(46, 31, 21, 0.58);
+    }
+
+    .capsule {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 0 20px 56px;
+    }
+
+    .cover {
+      min-height: 92vh;
+      display: grid;
+      align-content: end;
+      gap: 28px;
+      padding: 32px 0 44px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .cover__image {
+      position: relative;
+      min-height: 340px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--strong);
+    }
+
+    .cover__image img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.84;
+      filter: saturate(0.92) brightness(0.92);
+    }
+
+    .cover__meta {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--paper);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(46, 31, 21, 0.45);
+    }
+
+    .cover__number {
+      position: absolute;
+      right: 18px;
+      bottom: 12px;
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: 4.2rem;
+      font-style: italic;
+      line-height: 1;
+      text-shadow: 0 2px 12px rgba(46, 31, 21, 0.45);
+    }
+
+    .title {
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 4.4rem;
+      font-weight: 300;
+      line-height: 0.96;
+    }
+
+    .deck {
+      max-width: 31rem;
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .source-note {
+      color: var(--gold);
+      font-size: 0.82rem;
+    }
+
+    .positioning {
+      max-width: 39rem;
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .value-item {
+      padding: 16px 0 0;
+      border-top: 1px solid var(--accent);
+    }
+
+    .value-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 2.45rem;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    h3 {
+      margin: 28px 0 8px;
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.22;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    .arc {
+      display: grid;
+      gap: 18px;
+    }
+
+    .arc article {
+      padding: 0 0 18px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .arc article:last-child {
+      border-bottom: 0;
+    }
+
+    .rituals {
+      display: grid;
+      gap: 14px;
+    }
+
+    .ritual {
+      padding: 18px;
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .ritual h3 {
+      margin-top: 0;
+    }
+
+    .practice-list {
+      display: grid;
+      gap: 0;
+      list-style: none;
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .practice-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--divider);
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.16rem;
+      font-style: italic;
+    }
+
+    .practice-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .practice-guide {
+      display: grid;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .practice-card {
+      padding: 20px;
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .practice-card h3 {
+      margin-top: 0;
+    }
+
+    .practice-card ul,
+    .practice-card ol {
+      margin: 10px 0 0 1.1rem;
+    }
+
+    .practice-card li {
+      margin: 6px 0;
+    }
+
+    .source-tag {
+      margin-top: 12px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .week-day {
+      padding: 12px 10px;
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--strong);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .week-day strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .guest-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 8px 0 30px;
+    }
+
+    .guest {
+      min-width: 0;
+    }
+
+    .guest img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--divider);
+    }
+
+    .guest figcaption {
+      margin-top: 8px;
+      color: var(--strong);
+      font-size: 0.74rem;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .guest-line {
+      padding: 18px 0;
+      border-top: 1px solid var(--divider);
+    }
+
+    .guest-line:last-of-type {
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .takeaways {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--paper);
+      border: 1px solid var(--divider);
+    }
+
+    .takeaways h3 {
+      margin-top: 0;
+    }
+
+    .takeaways ol {
+      margin-left: 1.1rem;
+    }
+
+    .takeaways li {
+      margin: 8px 0;
+    }
+
+    blockquote {
+      margin: 24px 0;
+      padding: 22px 24px;
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: var(--bg-warm);
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.32rem;
+      font-style: italic;
+      line-height: 1.48;
+    }
+
+    blockquote footer {
+      margin-top: 14px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.86rem;
+      font-style: normal;
+      line-height: 1.45;
+    }
+
+    .book {
+      padding: 24px;
+      border-radius: 8px;
+      background: var(--paper);
+      border: 1px solid var(--divider);
+    }
+
+    .book h3 {
+      margin-top: 0;
+    }
+
+    .quiet {
+      color: var(--text);
+      font-size: 0.94rem;
+    }
+
+    .closing {
+      padding: 48px 0 16px;
+      color: var(--strong);
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-style: italic;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .closing a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+
+      .capsule {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .site-link {
+        left: 12px;
+        top: 12px;
+      }
+
+      .cover {
+        min-height: auto;
+        padding-top: 20px;
+      }
+
+      .cover__image,
+      .cover__image img {
+        min-height: 300px;
+      }
+
+      .title {
+        font-size: 3.2rem;
+      }
+
+      h2 {
+        font-size: 2.05rem;
+      }
+
+      .guest-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .value-grid,
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+
+      blockquote {
+        padding: 18px;
+        font-size: 1.18rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="site-link" href="/">t-club</a>
+  <main class="capsule">
+    <header class="cover">
+      <div class="cover__image">
+        <img src="images/hero-bg.jpg" alt="Тёплая ботаническая обложка t-club">
+        <div class="cover__meta">
+          <span>Май 2026</span>
+          <span>t-club</span>
+        </div>
+        <div class="cover__number">05</div>
+      </div>
+      <div>
+        <h1 class="title">Моё Тело</h1>
+        <p class="deck">Месяц, в котором мы знакомились с телом заново: через воду, движение, состояние, органы чувств, заботу и честную границу между усилием и насилием над собой.</p>
+        <p class="source-note">760 сообщений · 5 гостевых голосов · 6 самостоятельных практик</p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Как читать эту капсулу</h2>
+      <p class="positioning">Если вы не были в клубе в мае, эта капсула всё равно должна работать сама: как карта месяца, короткий практикум и мягкий вход в тему тела без необходимости догонять весь чат.</p>
+      <div class="value-grid" aria-label="Что внутри">
+        <div class="value-item">
+          <strong>Арка месяца</strong>
+          <p>Что менялось от воды, еды и движения к состоянию, ресурсу и границе между усилием и давлением.</p>
+        </div>
+        <div class="value-item">
+          <strong>Пять голосов</strong>
+          <p>Движение, психосоматика, женское здоровье, йога и мягкое формирование привычки через 5 минут.</p>
+        </div>
+        <div class="value-item">
+          <strong>Практика</strong>
+          <p>Шесть упражнений из архива мая, которые можно попробовать без доступа к встречам и записям.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Что мы прошли вместе</h2>
+      <div class="arc">
+        <article>
+          <h3>Вода, еда, движение</h3>
+          <p>Май начался с самого простого: как тело пьёт, ест, двигается и восстанавливается. Вода стала первым мягким входом в тему, за ней пришли разговоры о завтраках, белке, привычках и челлендже: шаги, планка, Сурья, китайская гимнастика.</p>
+        </article>
+        <article>
+          <h3>Встретиться с собой</h3>
+          <p>Первая неделя открылась свиданием со своим телом: музыка, зеркало, любящий взгляд и вопрос «чего хочет моё тело прямо сейчас?». После вводной встречи «Диалог с телом» появились первые личные ответы.</p>
+        </article>
+        <article>
+          <h3>Состояние как язык</h3>
+          <p>На второй неделе тело звучало раньше слов: через напряжение, усталость, раздражение, вдохновение, желание остановиться. Практики помогали не «починить» себя, а спросить, что тело пытается сказать.</p>
+        </article>
+        <article>
+          <h3>Тело как ресурс</h3>
+          <p>Третья неделя собрала три опоры: сон, питание, движение, и пять каналов чувств. Ресурс возвращался через температуру воды, мягкость одежды, запахи, музыку, дыхание, прогулку, красоту.</p>
+        </article>
+        <article>
+          <h3>Усилие и насилие</h3>
+          <p>В финале месяца вопрос стал точнее: где действие оживляет, а где начинается давление на себя? Тело не только болит, когда сломалось. Оно разговаривает раньше.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Сквозные ритуалы</h2>
+      <div class="rituals">
+        <article class="ritual">
+          <h3>Четверг благодарности телу</h3>
+          <p>Мы говорили: «Дорогое тело, я благодарна тебе…», ставили будильники, делали пять глубоких вдохов и выдохов, переводили внимание внутрь.</p>
+        </article>
+        <article class="ritual">
+          <h3>Пятница красоты и органы чувств</h3>
+          <p>Пятница прошла через зрение, запахи, вкус, слух, осязание. Красота стала не украшением, а топливом, способом вернуться в момент и почувствовать жизнь.</p>
+        </article>
+        <article class="ritual">
+          <h3>Челлендж без насилия</h3>
+          <p>10 000 шагов, планка, Сурья, пресс, танцы, йога. Но главный сдвиг был не в цифрах, а в различении: где дисциплина поддерживает, а где тело просит мягкости.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Мини-практикум</h2>
+      <p class="positioning">Выберите одну практику на сегодня или пройдите весь блок как мягкую неделю знакомства с телом. Всё ниже собрано из сообщений мая.</p>
+
+      <div class="practice-guide">
+        <article class="practice-card">
+          <h3>1. Свидание с телом на 5-10 минут</h3>
+          <p>Выделите время наедине, включите любимую музыку, подойдите к зеркалу и посмотрите на себя любящими глазами. Если хочется смелее, можно остаться в белье или без; если нет, достаточно просто встретиться с собой взглядом.</p>
+          <ul>
+            <li>Какой я себя вижу?</li>
+            <li>Что мне нравится?</li>
+            <li>Чего хочет моё тело прямо сейчас?</li>
+          </ul>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>2. Благодарность телу с будильниками</h3>
+          <p>Поставьте сигнал 1-3 раза в день. Каждый раз сделайте 5 глубоких вдохов и выдохов, переведите внимание внутрь и заметьте ощущения, эмоции, напряжение или расслабление. Начните словами: «Дорогое тело, я благодарна тебе...»</p>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>3. Чек-ин состояния</h3>
+          <p>Несколько раз в день спросите себя: как я себя чувствую прямо сейчас? Что происходит в моём теле? Где есть напряжение, лёгкость, тепло или зажатость? От чего моё состояние меняется?</p>
+          <p>В мае эта практика помогала не спорить с телом, а услышать его раньше слов.</p>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>4. Вход в привычку через 5 минут</h3>
+          <p>Если хочется добавить движение, дыхание или мягкую гимнастику, начните с 5 минут. В мае Зарина делилась, что так легче договориться с мозгом: 20 минут могут вызвать сопротивление, а 5 минут ощущаются возможными.</p>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>5. Неделя органов чувств</h3>
+          <p>Выберите одну базовую опору на неделю: сон, питание, движение, вода или паузы на отдых. Параллельно проживите каждый день через один канал чувств.</p>
+          <div class="week-grid" aria-label="Неделя органов чувств">
+            <div class="week-day"><strong>Пн</strong>Осязание: вода, ткань, опора под ногами.</div>
+            <div class="week-day"><strong>Вт</strong>Вкус: еда медленнее, внимательнее, с интересом.</div>
+            <div class="week-day"><strong>Ср</strong>Слух: музыка, тишина, природа, дыхание.</div>
+            <div class="week-day"><strong>Чт</strong>Обоняние: цветы, лес, чай, кофе, крем.</div>
+            <div class="week-day"><strong>Пт</strong>Зрение: свет, цвет, закат, детали, лица.</div>
+          </div>
+          <p>В конце недели спросите: через какой канал мне легче всего возвращать ресурс?</p>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>6. Граница между усилием и давлением</h3>
+          <p>Возьмите в дневник вопросы финальной недели:</p>
+          <ul>
+            <li>Через какие действия моё тело оживает?</li>
+            <li>После каких задач я чувствую энергию, а после каких опустошение?</li>
+            <li>Где мне помогает дисциплина, а где я уже живу через давление?</li>
+            <li>Как ощущается в теле «я хочу» и как ощущается «я должна»?</li>
+            <li>В каких моментах я игнорирую сигналы тела?</li>
+            <li>Как забота о себе выглядит в действиях?</li>
+          </ul>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+
+        <article class="practice-card">
+          <h3>Бонус: мягкое расслабление по Джекобсону</h3>
+          <p>Можно попробовать короткую версию прогрессивной мышечной релаксации: напрягать группу мышц на 5-7 секунд, затем отпускать на 15-20 секунд, на напряжении делать вдох, на расслаблении глубокий выдох.</p>
+          <p>В архиве был полный проход снизу вверх: стопы и икры, бёдра и ягодицы, живот и спина, кисти и предплечья, плечи и шея, лицо, затем 2-3 минуты неподвижного отдыха. Делайте мягко и без боли.</p>
+          <p class="source-tag">Из архива мая</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Пять граней тела</h2>
+      <figure class="guest-grid" aria-label="Гостьи месяца">
+        <div class="guest">
+          <img src="images/natalie.jpeg" alt="Натали">
+          <figcaption>Натали</figcaption>
+        </div>
+        <div class="guest">
+          <img src="images/anastasia.jpeg" alt="Анастасия Биленко">
+          <figcaption>Анастасия</figcaption>
+        </div>
+        <div class="guest">
+          <img src="images/yulia.jpeg" alt="Юлия Лобашкова">
+          <figcaption>Юлия</figcaption>
+        </div>
+        <div class="guest">
+          <img src="images/sofia.jpeg" alt="София Плетнёва">
+          <figcaption>София</figcaption>
+        </div>
+        <div class="guest">
+          <img src="images/zarina.jpeg" alt="Зарина Хас">
+          <figcaption>Зарина</figcaption>
+        </div>
+      </figure>
+
+      <article class="guest-line">
+        <h3>Натали</h3>
+        <p>Движение как освобождение: через дыхание, динамическую медитацию и мягкое возвращение к себе после лет жёсткой дисциплины. <strong>Что унести:</strong> обычные действия можно делать не на автомате, а как маленькое посвящение себе и телу.</p>
+      </article>
+      <article class="guest-line">
+        <h3>Анастасия Биленко</h3>
+        <p>Психосоматика и практики, где тело не врёт: напряжение, злость, плечи, челюсть, сон, расслабление и связь мозга с телом. <strong>Что унести:</strong> начинать с наблюдения и мягкого телесного эксперимента, а не с насилия над симптомом.</p>
+      </article>
+      <article class="guest-line">
+        <h3>Юлия Лобашкова</h3>
+        <p>Женское здоровье, цикл, гормоны, базовая поддержка и очень бережная интонация в деликатной медицинской теме. <strong>Что унести:</strong> вопросы о теле имеют право на бережный, внимательный разговор, особенно в темах здоровья.</p>
+      </article>
+      <article class="guest-line">
+        <h3>София Плетнёва</h3>
+        <p>Йога как контакт с телом, дыханием и фокусом, не про форму, а про безопасность, опору и присутствие. <strong>Что унести:</strong> в движении важны не идеальная форма, а дыхание, внимание к ощущениям и умение быть в моменте.</p>
+      </article>
+      <article class="guest-line">
+        <h3>Зарина Хас</h3>
+        <p>Движение, тай-чи, цигун, китайская гимнастика и пять минут как честный вход в привычку без давления. <strong>Что унести:</strong> начать можно с малого, если малое действительно делается.</p>
+      </article>
+
+      <div class="takeaways">
+        <h3>Пять входов, которые можно забрать себе</h3>
+        <ol>
+          <li><strong>Через движение:</strong> спросить тело, какое движение ему подходит сегодня, а не какой режим нужно выдержать.</li>
+          <li><strong>Через расслабление:</strong> пройти тело снизу вверх и заметить разницу между напряжением и отпусканием.</li>
+          <li><strong>Через медицину:</strong> формулировать вопросы о женском здоровье без стыда и грубости к себе.</li>
+          <li><strong>Через йогу:</strong> использовать дыхание, фокус и простые асаны как способ вернуться в безопасность и опору.</li>
+          <li><strong>Через привычку:</strong> дать себе 5 минут вместо требования сразу стать новой версией себя.</li>
+        </ol>
+      </div>
+
+      <blockquote>
+        «меня очень удивило как у тебя получилось так мягко и легко помочь расслабиться и поговорить с телом..»
+        <footer>Участница, после практики соединения мозга с телом</footer>
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Книга и голоса</h2>
+      <div class="book">
+        <h3>Джулия Эндерс. «Очаровательный кишечник»</h3>
+        <p>Книга месяца пришла как приглашение смотреть на организм с интересом и уважением, не через критику и контроль. В чате она стала практичным разговором о пищеварении, микробиоте, привычках и маленьких телесных открытиях.</p>
+        <p>Что забрать без обязательного чтения: интерес к устройству тела как форму любви. Не исправлять тело только тогда, когда оно мешает, а узнавать его заранее: как оно переваривает, чувствует, устаёт, просит воду, движение, паузу или поддержку.</p>
+      </div>
+
+      <blockquote>
+        «Дорогое тело, благодарю тебя за то, что ты позволяешь мне чувствовать.. тепло, холод, влагу, прикосновения, объятия, поцелуи, боль, эмоции.»
+        <footer>Участница, в четверг благодарности</footer>
+      </blockquote>
+      <blockquote>
+        «И на данный момент мне совсем не хочется идти в жёсткие челленджи или ещё сильнее себя напрягать. Наоборот, хочется найти свою золотую середину...»
+        <footer>Участница, после разговора о теле и принятии</footer>
+      </blockquote>
+      <blockquote>
+        «Я чувствую центр в себе, а не в других людях. Приятно прийти к этому осознанию 💖»
+        <footer>Участница, финал месяца</footer>
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Инсайт месяца</h2>
+      <p>В мае самый сильный разворот был не в том, чтобы больше знать о теле, а в том, чтобы перестать обращаться к нему только тогда, когда что-то болит или выходит из строя.</p>
+      <p>Мы начали слышать тело раньше: в усталости, удовольствии, сопротивлении, желании движения, желании сна, в простом «разрешаю» и в границе между дисциплиной и давлением.</p>
+      <p>Тело стало не задачей на исправление, а домом, с которым можно разговаривать.</p>
+      <h3>После чтения: один честный шаг</h3>
+      <p>Выберите только одну вещь из капсулы и сделайте её в ближайшие 24 часа: поставить будильник благодарности, лечь спать раньше, выйти на короткую прогулку, включить 5 минут движения, записать ответы на вопросы про «хочу» и «должна» или просто спросить тело, чего оно хочет прямо сейчас.</p>
+      <p>В мае ценность была не в идеальном выполнении, а в том, чтобы снова заметить живой контакт.</p>
+      <div class="closing">
+        <p>Если откликается, клуб открыт.<br>Июнь: «Красота».</p>
+        <p><a href="https://t-club.ca">t-club.ca</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Analytics: GoatCounter, cookieless aggregate counts. -->
+  <script>window.goatcounter = { no_onload: true };</script>
+  <script data-goatcounter="https://tclub.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      function whenReady(fn, tries) {
+        if (window.goatcounter && window.goatcounter.count) { fn(); }
+        else if ((tries || 0) < 20) { setTimeout(function () { whenReady(fn, (tries || 0) + 1); }, 300); }
+      }
+      whenReady(function () {
+        window.goatcounter.count({ path: 'capsule-open/2026-05', title: 'Капсула май — открыли', event: true });
+      });
+
+      var fired = false;
+      var timer = setTimeout(fireEngaged, 20000);
+
+      function fireEngaged() {
+        if (fired) return;
+        fired = true;
+        cleanup();
+        whenReady(function () {
+          window.goatcounter.count({ path: 'capsule-engaged/2026-05', title: 'Капсула май — вчитались', event: true });
+        });
+      }
+
+      function onScroll() {
+        var doc = document.documentElement;
+        var reach = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+        if (reach >= 0.5) fireEngaged();
+      }
+
+      function cleanup() {
+        window.removeEventListener('scroll', onScroll);
+        if (timer) clearTimeout(timer);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>
