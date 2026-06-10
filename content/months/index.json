@@ -1,6 +1,6 @@
 {
   "current": "2026-06",
-  "capsuleMonth": "2026-05",
+  "capsuleMonth": "2026-04",
   "months": [
     {
       "id": "2026-06",
@@ -23,9 +23,9 @@
         "uk": "Моє Тіло"
       },
       "guestName": {
-        "ru": "Юлия, Анастасия, Натали, София и Зарина",
-        "en": "Yulia, Anastasia, Natalie, Sofia and Zarina",
-        "uk": "Юлія, Анастасія, Наталі, Софія та Заріна"
+        "ru": "Юлия Лобашкова и Анастасия Биленко",
+        "en": "Yulia Lobashkova and Anastasia Bilenko",
+        "uk": "Юлія Лобашкова та Анастасія Біленко"
       }
     },
     {

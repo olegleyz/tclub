@@ -191,14 +191,5 @@
     "en": "May can become your month of meeting your body — through listening, care, and contact.",
     "uk": "Травень може стати твоїм місяцем зустрічі з тілом — через слух, дбайливість та контакт."
   },
-  "publishedAt": "2026-05-01",
-  "capsule": {
-    "available": true,
-    "price": {
-      "amount": "15",
-      "currency": "CAD"
-    },
-    "stripeLink": null,
-    "url": "/capsule/2026-05-dad2c5ff/"
-  }
+  "publishedAt": "2026-05-01"
 }
