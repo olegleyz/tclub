@@ -1,0 +1,89 @@
+{
+  "id": "2026-07",
+  "year": 2026,
+  "month": 7,
+  "theme": {
+    "title": {
+      "ru": "Дружба",
+      "en": "Friendship",
+      "uk": "Дружба"
+    },
+    "description": {
+      "ru": "Июль в Трансформационном клубе — месяц Дружбы. Исследуем, что такое настоящая дружба: как быть рядом, доверять, просить о помощи, принимать поддержку и самим быть опорой.",
+      "en": "July in the Transformation Club is the month of Friendship. We explore what true friendship means: how to be present, trust, ask for help, receive support, and become a source of support ourselves.",
+      "uk": "Липень у Трансформаційному клубі — місяць Дружби. Досліджуємо, що таке справжня дружба: як бути поруч, довіряти, просити про допомогу, приймати підтримку й самим бути опорою."
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ru": "Быть рядом",
+        "en": "Being Present",
+        "uk": "Бути поруч"
+      },
+      "description": {
+        "ru": "Смотрим, как это — дружить по-настоящему: быть рядом не из обязанности, а из живого желания, внимания и доверия.",
+        "en": "Looking at what it means to truly be friends: to be present not from obligation, but from genuine desire, attention, and trust.",
+        "uk": "Дивимося, як це — дружити по-справжньому: бути поруч не з обов’язку, а з живого бажання, уваги та довіри."
+      }
+    },
+    {
+      "title": {
+        "ru": "Просить и принимать поддержку",
+        "en": "Asking For and Receiving Support",
+        "uk": "Просити й приймати підтримку"
+      },
+      "description": {
+        "ru": "Исследуем, умеем ли мы просить о помощи, принимать поддержку и самим становиться опорой без спасательства и ожиданий.",
+        "en": "Exploring whether we know how to ask for help, receive support, and become support for others without rescuing or expectations.",
+        "uk": "Досліджуємо, чи вміємо просити про допомогу, приймати підтримку й самим ставати опорою без рятівництва та очікувань."
+      }
+    },
+    {
+      "title": {
+        "ru": "Без жёсткого плана",
+        "en": "Without a Fixed Plan",
+        "uk": "Без жорсткого плану"
+      },
+      "description": {
+        "ru": "В июле оставляем привычный план и пробуем другой формат: встречаться тогда, когда рождается желание, и идти за тем, что откликается сердцу.",
+        "en": "In July, we leave the usual plan aside and try another format: meeting when the desire arises and following what speaks to the heart.",
+        "uk": "У липні залишаємо звичний план і пробуємо інший формат: зустрічатися тоді, коли народжується бажання, і йти за тим, що відгукується серцю."
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "ru": "Встречи по зову сердца — тогда, когда рождается желание",
+      "en": "Meetings by the call of the heart — whenever the desire arises",
+      "uk": "Зустрічі за покликом серця — тоді, коли народжується бажання"
+    },
+    {
+      "ru": "Разговоры, истории, открытия и вопросы о дружбе",
+      "en": "Conversations, stories, discoveries, and questions about friendship",
+      "uk": "Розмови, історії, відкриття та запитання про дружбу"
+    },
+    {
+      "ru": "Совместное исследование без обязательной программы и жёсткого расписания",
+      "en": "Shared exploration without a mandatory program or rigid schedule",
+      "uk": "Спільне дослідження без обов’язкової програми та жорсткого розкладу"
+    },
+    {
+      "ru": "Пространство доверия, поддержки и живого присутствия",
+      "en": "A space of trust, support, and living presence",
+      "uk": "Простір довіри, підтримки та живої присутності"
+    },
+    {
+      "ru": "Тема отношений с другими — и с собой",
+      "en": "The theme of relationships with others — and with ourselves",
+      "uk": "Тема стосунків з іншими — і з собою"
+    }
+  ],
+  "guests": [],
+  "closingMessage": {
+    "ru": "Если чувствуешь отклик, присоединяйся. Возможно, именно этот месяц поможет по-новому увидеть свои отношения с другими — и с собой.",
+    "en": "If you feel the call, join us. This may be the month that helps you see your relationships with others — and with yourself — in a new way.",
+    "uk": "Якщо відчуваєш відгук, приєднуйся. Можливо, саме цей місяць допоможе по-новому побачити свої стосунки з іншими — і з собою."
+  },
+  "publishedAt": "2026-06-26"
+}

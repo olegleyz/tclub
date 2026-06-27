@@ -1,7 +1,20 @@
 {
-  "current": "2026-06",
+  "current": "2026-07",
   "capsuleMonth": "2026-04",
   "months": [
+    {
+      "id": "2026-07",
+      "theme": {
+        "ru": "Дружба",
+        "en": "Friendship",
+        "uk": "Дружба"
+      },
+      "guestName": {
+        "ru": "Свободный формат",
+        "en": "Open format",
+        "uk": "Вільний формат"
+      }
+    },
     {
       "id": "2026-06",
       "theme": {
